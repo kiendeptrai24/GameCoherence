@@ -1,0 +1,9 @@
+archetype _a167402e36850884aa7ce3d374cd6c77 [id "0"]
+  lod 0
+    WorldPosition [id "18", base-id "0"]
+      archetype_field value [bits "17", range-min "-100", range-max "600", compression "FixedPoint", precision "0.01", sim-frames "true"]
+    WorldOrientation [id "19", base-id "1"]
+      archetype_field value [bits "12", sim-frames "true"]
+    GenericScale [id "20", base-id "17"]
+      archetype_field value [sim-frames "true", compression "None"]
+

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a689d91966dfb46499fb63f130d9b905, type: 3}
+  m_Name: Simulator
+  m_EditorClassIdentifier: 
+  m_Description: 
+  m_EnableEditors: 1
+  m_MainEditorInstance:
+    Name: Main Editor
+    <CorrespondingNodeId>k__BackingField: Main Editor|0_run
+    m_Nodes:
+    - Main Editor|0_run
+    - Main Editor|0_deploy
+    m_PlayerTag: 
+    m_InitialScene: {fileID: 0}
+  m_EditorInstances:
+  - Name: Player 2
+    <CorrespondingNodeId>k__BackingField: Player 2|1_run
+    m_Nodes:
+    - Player 2|1_run
+    - Player 2|1_deploy
+    m_PlayerTag: 
+    m_InitialScene: {fileID: 0}
+    m_AdvancedConfiguration:
+      StreamLogsToMainEditor: 0
+      LogsColor: {r: 0.3643, g: 0.581, b: 0.8679, a: 1}
+  - Name: Player 3
+    <CorrespondingNodeId>k__BackingField: Player 3|2_run
+    m_Nodes:
+    - Player 3|2_run
+    - Player 3|2_deploy
+    m_PlayerTag: 
+    m_InitialScene: {fileID: 0}
+    m_AdvancedConfiguration:
+      StreamLogsToMainEditor: 0
+      LogsColor: {r: 0.3643, g: 0.581, b: 0.8679, a: 1}
+  m_LocalInstances:
+  - Name: Instance
+    <CorrespondingNodeId>k__BackingField: Instance - Run
+    m_Nodes:
+    - Instance - Build
+    - Instance - Run
+    m_BuildProfile: {fileID: 11400000, guid: 6c43f3555164cfc48908554f71e416be, type: 2}
+    advancedConfiguration:
+      m_StreamLogsToMainEditor: 1
+      m_LogsColor: {r: 0.3643, g: 0.581, b: 0.8679, a: 1}
+      m_Arguments: '--coherence-region             // region where the simulator
+        is started --coherence-world-id           // unique world id (in world mode)
+        --coherence-http-server-port   // REST access for starting / stopping rooms
+        --coherence-auth-token         // token to authorize access --coherence-simulation-server 
+        // identify as simulation server --coherence-simulator-type     // Room or
+        World  // the following should be used also when starting a local simulation
+        server to  // successfully connect to the local replication server  --coherence-ip                
+        // address of the replication server (eg 127.0.0.1) --coherence-port              
+        // port of the replication server --coherence-room-id            // room
+        id when connecting to a room --coherence-unique-room-id     // unique room
+        id to connect to in room mode --coherence-room-tags          // tags used
+        when creating the room --coherence-room-kv            // key values supplied
+        when creating the room '
+  m_RemoteInstances: []
+  m_OverridePort: 0
+  m_Port: 0
+  m_MainEditorInstanceObsolete:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
