@@ -8,6 +8,7 @@ namespace Coherence.Samples.Kien
     using Coherence.Toolkit;
     using Connection;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
 
     public class LobbyManager : MonoBehaviour
     {
@@ -34,18 +35,40 @@ namespace Coherence.Samples.Kien
 
         private void Awake()
         {
-            if (!CoherenceBridgeStore.TryGetBridge(gameObject.scene, out bridge))
+            SceneManager.sceneLoaded += OnSceneLoaded;
+
+            replicationServerRoomsService = new ReplicationServerRoomsService();
+            localToggleRefresher = StartCoroutine(LocalToggleRefresher());
+        }
+        private IEnumerator Start()
+        {
+            yield return null; 
+            if (!CoherenceBridgeStore.TryGetBridge(SceneManager.GetActiveScene(), out bridge))
             {
-                Debug.LogError($"{nameof(CoherenceBridge)} required on the scene.\n" +
-                               "Add one via 'GameObject > coherence > Bridge'.", this);
+                Debug.LogError("Bridge not found yet.");
+            }
+            bridge.onConnected.AddListener((_) => { OnBridgeConnected?.Invoke(); });
+            bridge.onDisconnected.AddListener((_, _) => { OnBridgeDisconnected?.Invoke(); });
+            bridge.onConnectionError.AddListener((_, e) => { OnConnectionError?.Invoke(e); });
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.name.Contains("LoadingScene") || scene.name == "LoadingScene")
+            {
+                Debug.Log($"Skip CoherenceBridge check in {scene.name}");
                 return;
             }
 
-            replicationServerRoomsService = new ReplicationServerRoomsService();
-            bridge.onConnected.AddListener((_) => { OnBridgeConnected?.Invoke(); });
-            bridge.onDisconnected.AddListener((_, _) => {OnBridgeDisconnected?.Invoke();});
-            bridge.onConnectionError.AddListener((_, e) => {OnConnectionError?.Invoke(e);});
-            localToggleRefresher = StartCoroutine(LocalToggleRefresher());
+            // ✅ Dùng 'scene' thay vì 'gameObject.scene'
+            if (!CoherenceBridgeStore.TryGetBridge(SceneManager.GetActiveScene(), out bridge))
+            {
+                Debug.LogError($"{nameof(CoherenceBridge)} required on the scene.\n" +
+                                "Add one via 'GameObject > coherence > Bridge'. " + SceneManager.GetActiveScene().name, this);
+                return;
+            }
+
+            Debug.Log($"Bridge found in {scene.name}");
         }
 
         private void OnDestroy()
@@ -98,6 +121,7 @@ namespace Coherence.Samples.Kien
         public void JoinRoom(RoomData roomData)
         {
             bridge.JoinRoom(roomData);
+            SceneLoadManager.Instance.LoadRegularScene("Game");
         }
 
         public void Disconnect()

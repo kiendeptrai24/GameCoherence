@@ -1,23 +1,42 @@
+using System;
 using UnityEngine;
-
-public class SelectionCharactor : MonoBehaviour
+namespace Coherence.Samples.Kien
 {
-    [SerializeField] private LayerMask whatIsPlayer;
-    private IInteractable objInteract;
 
-    void Update()
+    public class SelectionCharactor : MonoBehaviour
     {
-        if (Input.GetMouseButtonDown(0))
+        public string namechar;
+        public PlayerInteractable.CharactorType charactorType;
+        [SerializeField] private LayerMask whatIsPlayer;
+        private IInteractable objInteract;
+        private PlayerInteractable player;
+        public GameObject character;
+        public ServicePlayerInfo.CharacterInfo GetCharactor()
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity,whatIsPlayer))
+            player = character.GetComponent<PlayerInteractable>();
+            charactorType = player.charactorType;
+            namechar = player.GetName();
+            ServicePlayerInfo.CharacterInfo newchar = new ServicePlayerInfo.CharacterInfo();
+            newchar.type = charactorType;
+            newchar.name = namechar;
+            return newchar;
+        }
+        void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
             {
-                objInteract?.EndInteract();
-                objInteract = hit.collider.GetComponent<IInteractable>(); 
-                objInteract?.Interact();
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, whatIsPlayer))
+                {
+                    objInteract?.EndInteract();
+                    objInteract = hit.collider.GetComponent<IInteractable>();
+                    objInteract?.Interact();
+                    character = hit.collider.gameObject;
+                    ServicePlayerInfo.Instance.SetCharactor(GetCharactor());
+                }
             }
         }
+
     }
-    
 }

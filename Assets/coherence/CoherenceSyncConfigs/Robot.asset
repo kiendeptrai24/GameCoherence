@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 579f4a509fd2f994fa391c0c78ea3f11, type: 3}
-  m_Name: Player
+  m_Name: Robot
   m_EditorClassIdentifier: 
-  id: 7c751ec26a8223d4789f4058354a755f
-  selfId: b4f487ca68cadad46bc55fd6efed69d9
-  editorTarget: {fileID: 8079409665112650684, guid: 7c751ec26a8223d4789f4058354a755f, type: 3}
+  id: a857fd6c221f7f04fa9ed500e317642a
+  selfId: a585b7164e1f34c4591cc9512959f6e3
+  editorTarget: {fileID: 6006073446716517370, guid: a857fd6c221f7f04fa9ed500e317642a, type: 3}
   includeInSchema: 1
   objectProvider:
-    rid: 2856077623013408954
+    rid: 2856077623013408960
   objectInstantiator:
-    rid: 2856077623013408955
+    rid: 2856077623013408961
   references:
     version: 2
     RefIds:
-    - rid: 2856077623013408954
+    - rid: 2856077623013408960
       type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data:
-        prefab: {fileID: 8079409665112650684, guid: 7c751ec26a8223d4789f4058354a755f, type: 3}
-    - rid: 2856077623013408955
+        prefab: {fileID: 6006073446716517370, guid: a857fd6c221f7f04fa9ed500e317642a, type: 3}
+    - rid: 2856077623013408961
       type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
       data: 

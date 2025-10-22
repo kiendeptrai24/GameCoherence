@@ -17,7 +17,7 @@ namespace Coherence.Samples.Kien
         private bool joinNextCreatedRoom;
         private ulong lastCreatedRoomUid;
         private void Awake() {
-            // Add components
+            // Add component
             lobbyManager = FindAnyObjectByType<LobbyManager>();
             view = GetComponent<RoomView>();
 

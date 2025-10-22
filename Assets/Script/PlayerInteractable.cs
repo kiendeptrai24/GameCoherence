@@ -6,11 +6,18 @@ namespace Coherence.Samples.Kien
 { 
     public class PlayerInteractable : MonoBehaviour , IInteractable
     {
+        public enum CharactorType
+        {
+            None,
+            Player,
+            Robot
+        }
         [SerializeField] private GameObject RecHighLight;
         [SerializeField] private TextMeshProUGUI nameTxt;
         [SerializeField] private InputField playerNameInputField;
         private RoomView roomsDialogUI;
         private string nameChar;
+        public CharactorType charactorType;
         private void Awake() {
             roomsDialogUI = FindAnyObjectByType<RoomView>();
             playerNameInputField = roomsDialogUI.playerNameInputField;
@@ -43,5 +50,6 @@ namespace Coherence.Samples.Kien
             nameChar = name;
             nameTxt.text = nameChar;
         }
+        public string GetName() => nameChar;
     }
 }

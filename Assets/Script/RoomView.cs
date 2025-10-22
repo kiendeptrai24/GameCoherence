@@ -76,11 +76,11 @@ namespace Coherence.Samples.Kien
                 gameObject.SetActive(false);
             }
             DontDestroyOnLoad(gameObject);
-            
+
         }
         private void OnEnable()
         {
-            
+
             var eventSystems = FindObjectsByType<EventSystem>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             if (eventSystems.Length == 0)
             {
@@ -89,16 +89,16 @@ namespace Coherence.Samples.Kien
                 Debug.LogWarning("EventSystem not found on the scene. Adding one now.\nConsider creating an EventSystem yourself to forward UI input.", eventSystem);
             }
 
-            lanOnlineToggle.onValueChanged.AddListener( (_) => { OnModeChanged?.Invoke(_); });
-            joinRoomButton.onClick.AddListener(() => {OnJoinRoomClicked?.Invoke();});
-            showCreateRoomPanelButton.onClick.AddListener(() => {OnShowCreateRoomPanelClicked?.Invoke();});
-            hideCreateRoomPanelButton.onClick.AddListener(() => {OnHideCreateRoomPanelClicked?.Invoke();});
-            createAndJoinRoomButton.onClick.AddListener(() => {OnCreateAndJoinRoomClicked?.Invoke();});
-            regionDropdown.onValueChanged.AddListener((_) => {OnRegionSelectionChanged?.Invoke(_);});
-            refreshRegionsButton.onClick.AddListener(() => {OnRefreshRegionsClicked?.Invoke();});
-            refreshRoomsButton.onClick.AddListener(() => {OnRefreshRoomsClicked?.Invoke();});
-            disconnectButton.onClick.AddListener(() => {OnDisconnectClicked?.Invoke();});
-            popupDismissButton.onClick.AddListener(() => {OnPopupDismissClicked?.Invoke();});
+            lanOnlineToggle.onValueChanged.AddListener((_) => { OnModeChanged?.Invoke(_); });
+            joinRoomButton.onClick.AddListener(() => { OnJoinRoomClicked?.Invoke(); });
+            showCreateRoomPanelButton.onClick.AddListener(() => { OnShowCreateRoomPanelClicked?.Invoke(); });
+            hideCreateRoomPanelButton.onClick.AddListener(() => { OnHideCreateRoomPanelClicked?.Invoke(); });
+            createAndJoinRoomButton.onClick.AddListener(() => { OnCreateAndJoinRoomClicked?.Invoke(); });
+            regionDropdown.onValueChanged.AddListener((_) => { OnRegionSelectionChanged?.Invoke(_); });
+            refreshRegionsButton.onClick.AddListener(() => { OnRefreshRegionsClicked?.Invoke(); });
+            refreshRoomsButton.onClick.AddListener(() => { OnRefreshRoomsClicked?.Invoke(); });
+            disconnectButton.onClick.AddListener(() => { OnDisconnectClicked?.Invoke(); });
+            popupDismissButton.onClick.AddListener(() => { OnPopupDismissClicked?.Invoke(); });
 
             popupDialog.SetActive(false);
             templateRoomView.gameObject.SetActive(false);
@@ -203,7 +203,7 @@ namespace Coherence.Samples.Kien
         public RoomData GetSelectedRoom() => roomsListView.Selection.RoomData;
         public string GetRoomName() => roomNameInputField.text;
         public int GetRoomMaxPlayers() => int.TryParse(roomLimitInputField.text, out var limit) ? limit : 10;
-        public bool HasPlayerSelected() => FindAnyObjectByType<PlayerSpawner>().chosePlayer;
+        public bool HasPlayerSelected() => FindAnyObjectByType<SelectionCharactor>().character;
         public class ListView
         {
             public ConnectDialogRoomView Template;
@@ -301,6 +301,6 @@ namespace Coherence.Samples.Kien
 
                 Views.Clear();
             }
-    }
+        }
     }
 }

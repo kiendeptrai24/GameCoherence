@@ -340,11 +340,6 @@ namespace Coherence.Samples.RoomsDialog
 
         private void JoinRoom(RoomData roomData)
         {
-            if(playerSpawner.chosePlayer == false)
-            {
-                ShowError("error", "Please choose player before joining room");
-                return;
-            }
             EnterLoadingState();
             // fix here
             bridge.JoinRoom(roomData);
@@ -352,11 +347,6 @@ namespace Coherence.Samples.RoomsDialog
 
         private void CreateRoomAndJoin()
         {
-            if(playerSpawner.chosePlayer == false)
-            {
-                ShowError("error", "Please choose player before creating room");
-                return;
-            }
             joinNextCreatedRoom = true;
             CreateRoom();
         }
@@ -431,7 +421,7 @@ namespace Coherence.Samples.RoomsDialog
         {
             if (cloudState == state && wasCloudModeEnabled)
             {
-                 return;
+                return;
             }
 
             cloudState = state;
@@ -596,7 +586,7 @@ namespace Coherence.Samples.RoomsDialog
                 SetLocalState(LocalState.Ready);
             }
 
-            var roomsExist = requestResponse is { Status: RequestStatus.Success, Result: { Count : > 0 } };
+            var roomsExist = requestResponse is { Status: RequestStatus.Success, Result: { Count: > 0 } };
             SetUIState(roomsExist ? UIState.Ready : UIState.NoRoomsExist);
 
             if (requestResponse.Status is not RequestStatus.Success)
@@ -789,7 +779,7 @@ namespace Coherence.Samples.RoomsDialog
             refreshRegionsButton.interactable = interactable;
 
             refreshRoomsButton.interactable = interactable;
-            joinRoomButton.interactable = interactable && roomsListView is not null && roomsListView.Selection && roomsListView.Selection.RoomData.UniqueId != default(RoomData).UniqueId;;
+            joinRoomButton.interactable = interactable && roomsListView is not null && roomsListView.Selection && roomsListView.Selection.RoomData.UniqueId != default(RoomData).UniqueId; ;
         }
 
         private void OnCloudRoomsRegionSelectionChanged(int selectedIndex)
