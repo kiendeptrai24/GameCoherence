@@ -56,17 +56,83 @@ namespace Coherence.Generated
             return orig;
         }
 
-        public static unsafe WorldOrientation FromInteropArchetype_a167402e36850884aa7ce3d374cd6c77_WorldOrientation_LOD0(IntPtr data, Int32 dataSize, InteropAbsoluteSimulationFrame* simFrames, Int32 simFramesCount)
+        public static unsafe WorldOrientation FromInteropArchetype_27f1ac5097d4ee4409fbb87ad14f76c2_WorldOrientation_LOD0(IntPtr data, Int32 dataSize, InteropAbsoluteSimulationFrame* simFrames, Int32 simFramesCount)
         {
             if (dataSize != 16) {
                 throw new Exception($"Given data size is not equal to the struct size. ({dataSize} != 16) " +
-                    "for component with ID 19");
+                    "for component with ID 24");
             }
 
                 
             if (simFramesCount != 1) {
                 throw new Exception($"Given simFrames size is not equal to the expected length. ({simFramesCount} != 1) " +
-                    "for component with ID 19");
+                    "for component with ID 24");
+            }
+
+            var orig = new WorldOrientation();
+
+            var comp = (Interop*)data;
+
+            orig.value = comp->value;
+            orig.valueSimulationFrame = simFrames[0].Into();
+
+            return orig;
+        }
+        public static unsafe WorldOrientation FromInteropArchetype_6ba8b7030c4bf544396f864fc9dd99de_WorldOrientation_LOD0(IntPtr data, Int32 dataSize, InteropAbsoluteSimulationFrame* simFrames, Int32 simFramesCount)
+        {
+            if (dataSize != 16) {
+                throw new Exception($"Given data size is not equal to the struct size. ({dataSize} != 16) " +
+                    "for component with ID 29");
+            }
+
+                
+            if (simFramesCount != 1) {
+                throw new Exception($"Given simFrames size is not equal to the expected length. ({simFramesCount} != 1) " +
+                    "for component with ID 29");
+            }
+
+            var orig = new WorldOrientation();
+
+            var comp = (Interop*)data;
+
+            orig.value = comp->value;
+            orig.valueSimulationFrame = simFrames[0].Into();
+
+            return orig;
+        }
+        public static unsafe WorldOrientation FromInteropArchetype_a0e6252c4d09f4fb28257804194356b6_WorldOrientation_LOD0(IntPtr data, Int32 dataSize, InteropAbsoluteSimulationFrame* simFrames, Int32 simFramesCount)
+        {
+            if (dataSize != 16) {
+                throw new Exception($"Given data size is not equal to the struct size. ({dataSize} != 16) " +
+                    "for component with ID 32");
+            }
+
+                
+            if (simFramesCount != 1) {
+                throw new Exception($"Given simFrames size is not equal to the expected length. ({simFramesCount} != 1) " +
+                    "for component with ID 32");
+            }
+
+            var orig = new WorldOrientation();
+
+            var comp = (Interop*)data;
+
+            orig.value = comp->value;
+            orig.valueSimulationFrame = simFrames[0].Into();
+
+            return orig;
+        }
+        public static unsafe WorldOrientation FromInteropArchetype_a167402e36850884aa7ce3d374cd6c77_WorldOrientation_LOD0(IntPtr data, Int32 dataSize, InteropAbsoluteSimulationFrame* simFrames, Int32 simFramesCount)
+        {
+            if (dataSize != 16) {
+                throw new Exception($"Given data size is not equal to the struct size. ({dataSize} != 16) " +
+                    "for component with ID 36");
+            }
+
+                
+            if (simFramesCount != 1) {
+                throw new Exception($"Given simFrames size is not equal to the expected length. ({simFramesCount} != 1) " +
+                    "for component with ID 36");
             }
 
             var orig = new WorldOrientation();
@@ -222,6 +288,69 @@ namespace Coherence.Generated
             return val;
         }
 
+        public static WorldOrientation DeserializeArchetype_27f1ac5097d4ee4409fbb87ad14f76c2_WorldOrientation_LOD0(AbsoluteSimulationFrame referenceSimulationFrame, InProtocolBitStream bitStream)
+        {
+            var stoppedMask = (uint)0;
+            if (bitStream.ReadMask())
+            {
+                stoppedMask = bitStream.ReadMaskBits(1);
+            }
+
+            var val = new WorldOrientation();
+            if (bitStream.ReadMask())
+            {
+                val.valueSimulationFrame = referenceSimulationFrame + DeserializerTools.ReadFieldSimFrameDelta(bitStream);
+
+                val.value = bitStream.ReadQuaternion(12).ToUnityQuaternion();
+                val.FieldsMask |= valueMask;
+            }
+
+            val.StoppedMask = stoppedMask;
+
+            return val;
+        }
+        public static WorldOrientation DeserializeArchetype_6ba8b7030c4bf544396f864fc9dd99de_WorldOrientation_LOD0(AbsoluteSimulationFrame referenceSimulationFrame, InProtocolBitStream bitStream)
+        {
+            var stoppedMask = (uint)0;
+            if (bitStream.ReadMask())
+            {
+                stoppedMask = bitStream.ReadMaskBits(1);
+            }
+
+            var val = new WorldOrientation();
+            if (bitStream.ReadMask())
+            {
+                val.valueSimulationFrame = referenceSimulationFrame + DeserializerTools.ReadFieldSimFrameDelta(bitStream);
+
+                val.value = bitStream.ReadQuaternion(12).ToUnityQuaternion();
+                val.FieldsMask |= valueMask;
+            }
+
+            val.StoppedMask = stoppedMask;
+
+            return val;
+        }
+        public static WorldOrientation DeserializeArchetype_a0e6252c4d09f4fb28257804194356b6_WorldOrientation_LOD0(AbsoluteSimulationFrame referenceSimulationFrame, InProtocolBitStream bitStream)
+        {
+            var stoppedMask = (uint)0;
+            if (bitStream.ReadMask())
+            {
+                stoppedMask = bitStream.ReadMaskBits(1);
+            }
+
+            var val = new WorldOrientation();
+            if (bitStream.ReadMask())
+            {
+                val.valueSimulationFrame = referenceSimulationFrame + DeserializerTools.ReadFieldSimFrameDelta(bitStream);
+
+                val.value = bitStream.ReadQuaternion(12).ToUnityQuaternion();
+                val.FieldsMask |= valueMask;
+            }
+
+            val.StoppedMask = stoppedMask;
+
+            return val;
+        }
         public static WorldOrientation DeserializeArchetype_a167402e36850884aa7ce3d374cd6c77_WorldOrientation_LOD0(AbsoluteSimulationFrame referenceSimulationFrame, InProtocolBitStream bitStream)
         {
             var stoppedMask = (uint)0;

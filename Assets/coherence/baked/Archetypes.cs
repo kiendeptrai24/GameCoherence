@@ -11,10 +11,77 @@ namespace Coherence.Generated
     
     public static class Archetypes
     {
-        public const int _a167402e36850884aa7ce3d374cd6c77Index = 0;
+        public const int _27f1ac5097d4ee4409fbb87ad14f76c2Index = 0;
+        public const int _6ba8b7030c4bf544396f864fc9dd99deIndex = 1;
+        public const int _a0e6252c4d09f4fb28257804194356b6Index = 2;
+        public const int _a167402e36850884aa7ce3d374cd6c77Index = 3;
+        public const int _ba50eecfd968a47c38959f27b05771b6Index = 4;
 
         public static readonly EntityArchetype[] Definitions =
 		{
+            new EntityArchetype() // _27f1ac5097d4ee4409fbb87ad14f76c2
+            {
+                LODs = new EntityArchetypeLOD[]
+                {
+                    new EntityArchetypeLOD
+                    {
+                        Level = 0,
+                        Distance = 0,
+                        ComponentReplacement = new Dictionary<uint, uint>
+                        {
+                            { 0, Definition.InternalArchetype_27f1ac5097d4ee4409fbb87ad14f76c2_WorldPosition_LOD0 },
+                            { 1, Definition.InternalArchetype_27f1ac5097d4ee4409fbb87ad14f76c2_WorldOrientation_LOD0 },
+                            { 17, Definition.InternalArchetype_27f1ac5097d4ee4409fbb87ad14f76c2_GenericScale_LOD0 },
+                            { 19, Definition.InternalArchetype_27f1ac5097d4ee4409fbb87ad14f76c2__27f1ac5097d4ee4409fbb87ad14f76c2_6525610836190113121_LOD0 },
+                            { 18, Definition.InternalArchetype_27f1ac5097d4ee4409fbb87ad14f76c2__27f1ac5097d4ee4409fbb87ad14f76c2_4939570989761225410_LOD0 },
+                        },
+                        ComponentsExcluded = new uint[] 
+                        {
+                        },
+                    },
+                },
+            },
+            new EntityArchetype() // _6ba8b7030c4bf544396f864fc9dd99de
+            {
+                LODs = new EntityArchetypeLOD[]
+                {
+                    new EntityArchetypeLOD
+                    {
+                        Level = 0,
+                        Distance = 0,
+                        ComponentReplacement = new Dictionary<uint, uint>
+                        {
+                            { 0, Definition.InternalArchetype_6ba8b7030c4bf544396f864fc9dd99de_WorldPosition_LOD0 },
+                            { 1, Definition.InternalArchetype_6ba8b7030c4bf544396f864fc9dd99de_WorldOrientation_LOD0 },
+                            { 20, Definition.InternalArchetype_6ba8b7030c4bf544396f864fc9dd99de__6ba8b7030c4bf544396f864fc9dd99de_107609493621447933_LOD0 },
+                        },
+                        ComponentsExcluded = new uint[] 
+                        {
+                        },
+                    },
+                },
+            },
+            new EntityArchetype() // _a0e6252c4d09f4fb28257804194356b6
+            {
+                LODs = new EntityArchetypeLOD[]
+                {
+                    new EntityArchetypeLOD
+                    {
+                        Level = 0,
+                        Distance = 0,
+                        ComponentReplacement = new Dictionary<uint, uint>
+                        {
+                            { 0, Definition.InternalArchetype_a0e6252c4d09f4fb28257804194356b6_WorldPosition_LOD0 },
+                            { 1, Definition.InternalArchetype_a0e6252c4d09f4fb28257804194356b6_WorldOrientation_LOD0 },
+                            { 17, Definition.InternalArchetype_a0e6252c4d09f4fb28257804194356b6_GenericScale_LOD0 },
+                            { 21, Definition.InternalArchetype_a0e6252c4d09f4fb28257804194356b6__a0e6252c4d09f4fb28257804194356b6_5156161361901559470_LOD0 },
+                        },
+                        ComponentsExcluded = new uint[] 
+                        {
+                        },
+                    },
+                },
+            },
             new EntityArchetype() // _a167402e36850884aa7ce3d374cd6c77
             {
                 LODs = new EntityArchetypeLOD[]
@@ -35,11 +102,34 @@ namespace Coherence.Generated
                     },
                 },
             },
+            new EntityArchetype() // _ba50eecfd968a47c38959f27b05771b6
+            {
+                LODs = new EntityArchetypeLOD[]
+                {
+                    new EntityArchetypeLOD
+                    {
+                        Level = 0,
+                        Distance = 0,
+                        ComponentReplacement = new Dictionary<uint, uint>
+                        {
+                            { 0, Definition.InternalArchetype_ba50eecfd968a47c38959f27b05771b6_WorldPosition_LOD0 },
+                            { 22, Definition.InternalArchetype_ba50eecfd968a47c38959f27b05771b6__ba50eecfd968a47c38959f27b05771b6_5459872012036489579_LOD0 },
+                        },
+                        ComponentsExcluded = new uint[] 
+                        {
+                        },
+                    },
+                },
+            },
 		};
     
         public static Dictionary<string, int> IndexForName = new Dictionary<string, int>() 
         {
-            { "_a167402e36850884aa7ce3d374cd6c77", 0 },
+            { "_27f1ac5097d4ee4409fbb87ad14f76c2", 0 },
+            { "_6ba8b7030c4bf544396f864fc9dd99de", 1 },
+            { "_a0e6252c4d09f4fb28257804194356b6", 2 },
+            { "_a167402e36850884aa7ce3d374cd6c77", 3 },
+            { "_ba50eecfd968a47c38959f27b05771b6", 4 },
         };
     }     
     

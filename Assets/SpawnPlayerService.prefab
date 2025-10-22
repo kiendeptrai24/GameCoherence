@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4159842670573862534}
   - component: {fileID: 3188979428455076257}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SpawnPlayerService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterPrefab: {fileID: 8990843421507662511, guid: 16e87ccfe2b1b4b4c90cef5b3d9ddf33, type: 3}
+  chosePlayer: 0

@@ -42,9 +42,28 @@ namespace Coherence.Generated
                 case 15: return Scene.FromInterop(data, dataSize, simFrames, simFramesCount);
                 case 16: return AssetId.FromInterop(data, dataSize, simFrames, simFramesCount);
                 case 17: return GenericScale.FromInterop(data, dataSize, simFrames, simFramesCount);
-                case 18: return WorldPosition.FromInteropArchetype_a167402e36850884aa7ce3d374cd6c77_WorldPosition_LOD0(data, dataSize, simFrames, simFramesCount);
-                case 19: return WorldOrientation.FromInteropArchetype_a167402e36850884aa7ce3d374cd6c77_WorldOrientation_LOD0(data, dataSize, simFrames, simFramesCount);
-                case 20: return GenericScale.FromInteropArchetype_a167402e36850884aa7ce3d374cd6c77_GenericScale_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 18: return _27f1ac5097d4ee4409fbb87ad14f76c2_4939570989761225410.FromInterop(data, dataSize, simFrames, simFramesCount);
+                case 19: return _27f1ac5097d4ee4409fbb87ad14f76c2_6525610836190113121.FromInterop(data, dataSize, simFrames, simFramesCount);
+                case 20: return _6ba8b7030c4bf544396f864fc9dd99de_107609493621447933.FromInterop(data, dataSize, simFrames, simFramesCount);
+                case 21: return _a0e6252c4d09f4fb28257804194356b6_5156161361901559470.FromInterop(data, dataSize, simFrames, simFramesCount);
+                case 22: return _ba50eecfd968a47c38959f27b05771b6_5459872012036489579.FromInterop(data, dataSize, simFrames, simFramesCount);
+                case 23: return WorldPosition.FromInteropArchetype_27f1ac5097d4ee4409fbb87ad14f76c2_WorldPosition_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 24: return WorldOrientation.FromInteropArchetype_27f1ac5097d4ee4409fbb87ad14f76c2_WorldOrientation_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 25: return GenericScale.FromInteropArchetype_27f1ac5097d4ee4409fbb87ad14f76c2_GenericScale_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 26: return _27f1ac5097d4ee4409fbb87ad14f76c2_6525610836190113121.FromInteropArchetype_27f1ac5097d4ee4409fbb87ad14f76c2__27f1ac5097d4ee4409fbb87ad14f76c2_6525610836190113121_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 27: return _27f1ac5097d4ee4409fbb87ad14f76c2_4939570989761225410.FromInteropArchetype_27f1ac5097d4ee4409fbb87ad14f76c2__27f1ac5097d4ee4409fbb87ad14f76c2_4939570989761225410_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 28: return WorldPosition.FromInteropArchetype_6ba8b7030c4bf544396f864fc9dd99de_WorldPosition_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 29: return WorldOrientation.FromInteropArchetype_6ba8b7030c4bf544396f864fc9dd99de_WorldOrientation_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 30: return _6ba8b7030c4bf544396f864fc9dd99de_107609493621447933.FromInteropArchetype_6ba8b7030c4bf544396f864fc9dd99de__6ba8b7030c4bf544396f864fc9dd99de_107609493621447933_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 31: return WorldPosition.FromInteropArchetype_a0e6252c4d09f4fb28257804194356b6_WorldPosition_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 32: return WorldOrientation.FromInteropArchetype_a0e6252c4d09f4fb28257804194356b6_WorldOrientation_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 33: return GenericScale.FromInteropArchetype_a0e6252c4d09f4fb28257804194356b6_GenericScale_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 34: return _a0e6252c4d09f4fb28257804194356b6_5156161361901559470.FromInteropArchetype_a0e6252c4d09f4fb28257804194356b6__a0e6252c4d09f4fb28257804194356b6_5156161361901559470_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 35: return WorldPosition.FromInteropArchetype_a167402e36850884aa7ce3d374cd6c77_WorldPosition_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 36: return WorldOrientation.FromInteropArchetype_a167402e36850884aa7ce3d374cd6c77_WorldOrientation_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 37: return GenericScale.FromInteropArchetype_a167402e36850884aa7ce3d374cd6c77_GenericScale_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 38: return WorldPosition.FromInteropArchetype_ba50eecfd968a47c38959f27b05771b6_WorldPosition_LOD0(data, dataSize, simFrames, simFramesCount);
+                case 39: return _ba50eecfd968a47c38959f27b05771b6_5459872012036489579.FromInteropArchetype_ba50eecfd968a47c38959f27b05771b6__ba50eecfd968a47c38959f27b05771b6_5459872012036489579_LOD0(data, dataSize, simFrames, simFramesCount);
             }
 
             throw new ArgumentException($"Unkown component type {type}", nameof(type));
@@ -255,6 +274,63 @@ namespace Coherence.Generated
                     val.value = orig.value;
 
                     updater.UpdateComponent(entity, componentType, val, 12, component.FieldsMask, component.StoppedMask, frames);
+
+                    return;
+                }
+                case 18:
+                {
+                    var orig = (_27f1ac5097d4ee4409fbb87ad14f76c2_4939570989761225410)component;
+                    var val = new _27f1ac5097d4ee4409fbb87ad14f76c2_4939570989761225410.Interop();
+
+                    var pinnedpath = orig.path != null ? Encoding.UTF8.GetBytes(orig.path) : null; fixed (void* pinnedPtrpath = pinnedpath) { val.path = new ByteArray { Data = pinnedPtrpath, Length =  pinnedpath?.Length ?? 0 };
+                    val.pathDirtyCounter = orig.pathDirtyCounter;
+
+                    updater.UpdateComponent(entity, componentType, val, 20, component.FieldsMask, component.StoppedMask, frames);
+
+}                    return;
+                }
+                case 19:
+                {
+                    var orig = (_27f1ac5097d4ee4409fbb87ad14f76c2_6525610836190113121)component;
+                    var val = new _27f1ac5097d4ee4409fbb87ad14f76c2_6525610836190113121.Interop();
+
+                    val.isBeingCarried = orig.isBeingCarried ? (System.Byte)1 : (System.Byte)0;
+
+                    updater.UpdateComponent(entity, componentType, val, 1, component.FieldsMask, component.StoppedMask, frames);
+
+                    return;
+                }
+                case 20:
+                {
+                    var orig = (_6ba8b7030c4bf544396f864fc9dd99de_107609493621447933)component;
+                    var val = new _6ba8b7030c4bf544396f864fc9dd99de_107609493621447933.Interop();
+
+                    val.timer = orig.timer;
+
+                    updater.UpdateComponent(entity, componentType, val, 4, component.FieldsMask, component.StoppedMask, frames);
+
+                    return;
+                }
+                case 21:
+                {
+                    var orig = (_a0e6252c4d09f4fb28257804194356b6_5156161361901559470)component;
+                    var val = new _a0e6252c4d09f4fb28257804194356b6_5156161361901559470.Interop();
+
+                    var pinnedpath = orig.path != null ? Encoding.UTF8.GetBytes(orig.path) : null; fixed (void* pinnedPtrpath = pinnedpath) { val.path = new ByteArray { Data = pinnedPtrpath, Length =  pinnedpath?.Length ?? 0 };
+                    val.pathDirtyCounter = orig.pathDirtyCounter;
+
+                    updater.UpdateComponent(entity, componentType, val, 20, component.FieldsMask, component.StoppedMask, frames);
+
+}                    return;
+                }
+                case 22:
+                {
+                    var orig = (_ba50eecfd968a47c38959f27b05771b6_5459872012036489579)component;
+                    var val = new _ba50eecfd968a47c38959f27b05771b6_5459872012036489579.Interop();
+
+                    val.timer = orig.timer;
+
+                    updater.UpdateComponent(entity, componentType, val, 4, component.FieldsMask, component.StoppedMask, frames);
 
                     return;
                 }

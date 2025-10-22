@@ -1,9 +1,68 @@
-archetype _a167402e36850884aa7ce3d374cd6c77 [id "0"]
+component _27f1ac5097d4ee4409fbb87ad14f76c2_4939570989761225410 [id "18"]
+  path String [bits "6"]
+  pathDirtyCounter Int [bits "11", range-min "-1", range-max "2000"]
+
+component _27f1ac5097d4ee4409fbb87ad14f76c2_6525610836190113121 [id "19"]
+  isBeingCarried Bool [bits "1"]
+
+component _6ba8b7030c4bf544396f864fc9dd99de_107609493621447933 [id "20"]
+  timer Float [range-min "-9223372036854775808", range-max "9223372036854775807", compression "None"]
+
+component _a0e6252c4d09f4fb28257804194356b6_5156161361901559470 [id "21"]
+  path String [bits "6"]
+  pathDirtyCounter Int [bits "11", range-min "-1", range-max "2000"]
+
+component _ba50eecfd968a47c38959f27b05771b6_5459872012036489579 [id "22"]
+  timer Float [range-min "-9223372036854775808", range-max "9223372036854775807", compression "None"]
+
+archetype _27f1ac5097d4ee4409fbb87ad14f76c2 [id "0"]
   lod 0
-    WorldPosition [id "18", base-id "0"]
+    WorldPosition [id "23", base-id "0"]
       archetype_field value [bits "17", range-min "-100", range-max "600", compression "FixedPoint", precision "0.01", sim-frames "true"]
-    WorldOrientation [id "19", base-id "1"]
+    WorldOrientation [id "24", base-id "1"]
       archetype_field value [bits "12", sim-frames "true"]
-    GenericScale [id "20", base-id "17"]
+    GenericScale [id "25", base-id "17"]
       archetype_field value [sim-frames "true", compression "None"]
+    _27f1ac5097d4ee4409fbb87ad14f76c2_6525610836190113121 [id "26", base-id "19"]
+      archetype_field isBeingCarried [bits "1"]
+    _27f1ac5097d4ee4409fbb87ad14f76c2_4939570989761225410 [id "27", base-id "18"]
+      archetype_field path [bits "6"]
+      archetype_field pathDirtyCounter [bits "11", range-min "-1", range-max "2000"]
+
+archetype _6ba8b7030c4bf544396f864fc9dd99de [id "1"]
+  lod 0
+    WorldPosition [id "28", base-id "0"]
+      archetype_field value [bits "17", range-min "-100", range-max "600", compression "FixedPoint", precision "0.01", sim-frames "true"]
+    WorldOrientation [id "29", base-id "1"]
+      archetype_field value [bits "12", sim-frames "true"]
+    _6ba8b7030c4bf544396f864fc9dd99de_107609493621447933 [id "30", base-id "20"]
+      archetype_field timer [range-min "-9223372036854775808", range-max "9223372036854775807", compression "None"]
+
+archetype _a0e6252c4d09f4fb28257804194356b6 [id "2"]
+  lod 0
+    WorldPosition [id "31", base-id "0"]
+      archetype_field value [bits "17", range-min "-100", range-max "600", compression "FixedPoint", precision "0.01", sim-frames "true"]
+    WorldOrientation [id "32", base-id "1"]
+      archetype_field value [bits "12", sim-frames "true"]
+    GenericScale [id "33", base-id "17"]
+      archetype_field value [sim-frames "true", compression "None"]
+    _a0e6252c4d09f4fb28257804194356b6_5156161361901559470 [id "34", base-id "21"]
+      archetype_field path [bits "6"]
+      archetype_field pathDirtyCounter [bits "11", range-min "-1", range-max "2000"]
+
+archetype _a167402e36850884aa7ce3d374cd6c77 [id "3"]
+  lod 0
+    WorldPosition [id "35", base-id "0"]
+      archetype_field value [bits "17", range-min "-100", range-max "600", compression "FixedPoint", precision "0.01", sim-frames "true"]
+    WorldOrientation [id "36", base-id "1"]
+      archetype_field value [bits "12", sim-frames "true"]
+    GenericScale [id "37", base-id "17"]
+      archetype_field value [sim-frames "true", compression "None"]
+
+archetype _ba50eecfd968a47c38959f27b05771b6 [id "4"]
+  lod 0
+    WorldPosition [id "38", base-id "0"]
+      archetype_field value [bits "17", range-min "-100", range-max "600", compression "FixedPoint", precision "0.01", sim-frames "true"]
+    _ba50eecfd968a47c38959f27b05771b6_5459872012036489579 [id "39", base-id "22"]
+      archetype_field timer [range-min "-9223372036854775808", range-max "9223372036854775807", compression "None"]
 
