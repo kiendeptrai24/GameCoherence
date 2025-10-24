@@ -17,25 +17,33 @@ namespace Coherence.Generated
     using System.Runtime.InteropServices;
     using UnityEngine;
 
-    public struct _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2 : IEntityCommand
+    public struct _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c : IEntityCommand
     {
         [StructLayout(LayoutKind.Explicit)]
         public struct Interop
         {
+            [FieldOffset(0)]
+            public ByteArray animName;
+            [FieldOffset(16)]
+            public System.Byte value;
         }
 
-        public static unsafe _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2 FromInterop(System.IntPtr data, System.Int32 dataSize) 
+        public static unsafe _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c FromInterop(System.IntPtr data, System.Int32 dataSize) 
         {
-            if (dataSize != 0) {
-                throw new System.Exception($"Given data size is not equal to the struct size. ({dataSize} != 0) " +
-                    "for command with ID 7");
+            if (dataSize != 17) {
+                throw new System.Exception($"Given data size is not equal to the struct size. ({dataSize} != 17) " +
+                    "for command with ID 6");
             }
 
-            var orig = new _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2();
+            var orig = new _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c();
             var comp = (Interop*)data;
+            orig.animName = comp->animName.Data != null ? System.Text.Encoding.UTF8.GetString((byte*)comp->animName.Data, (int)comp->animName.Length) : null;
+            orig.value = comp->value != 0;
             return orig;
         }
 
+        public System.String animName;
+        public System.Boolean value;
         
         public Entity Entity { get; set; }
         public Coherence.ChannelID ChannelID { get; set; }
@@ -44,7 +52,7 @@ namespace Coherence.Generated
         public uint SenderParticipant { get; set; }
         public ClientID SenderClientID { get; set; }
         public long Frame { get; set; }
-        public uint GetComponentType() => 7;
+        public uint GetComponentType() => 6;
         public bool UsesMeta { get; set; }
 
         public IEntityMessage Clone()
@@ -83,19 +91,43 @@ namespace Coherence.Generated
         public void NullEntityRefs(Entity entity) {
         }
         
-        
-        public static void Serialize(_ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2 commandData, IOutProtocolBitStream bitStream)
+        public _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c(
+            Entity entity,
+            System.String animName,
+            System.Boolean value
+        )
         {
+            Entity = entity;
+            ChannelID = Coherence.ChannelID.Default;
+            Target = default;
+            Routing = MessageTarget.All;
+            SenderParticipant = 0;
+            SenderClientID = default;
+            Frame = 0;
+            UsesMeta = false;
+
+            this.animName = animName; 
+            this.value = value; 
         }
         
-        public static _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2 Deserialize(IInProtocolBitStream bitStream, Entity entity, MessageTarget target)
+        public static void Serialize(_7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c commandData, IOutProtocolBitStream bitStream)
         {
+            bitStream.WriteShortString(commandData.animName);
+            bitStream.WriteBool(commandData.value);
+        }
+        
+        public static _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c Deserialize(IInProtocolBitStream bitStream, Entity entity, MessageTarget target)
+        {
+            var dataanimName = bitStream.ReadShortString();
+            var datavalue = bitStream.ReadBool();
     
-            return new _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2()
+            return new _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c()
             {
                 Entity = entity,
                 Routing = target,
                 Target = target,
+                animName = dataanimName,
+                value = datavalue
             };   
         }
     }

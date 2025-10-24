@@ -75,6 +75,57 @@ namespace Coherence.Generated
             return new WorldPosition();
         }    
     }
+    [UnityEngine.Scripting.Preserve]
+    public class Binding_7c751ec26a8223d4789f4058354a755f_38455a63418e498ca672325934845ab5 : RotationBinding
+    {   
+        private global::UnityEngine.Transform CastedUnityComponent;
+
+        protected override void OnBindingCloned()
+        {
+    	    CastedUnityComponent = (global::UnityEngine.Transform)UnityComponent;
+        }
+
+        public override global::System.Type CoherenceComponentType => typeof(WorldOrientation);
+        public override string CoherenceComponentName => "WorldOrientation";
+        public override uint FieldMask => 0b00000000000000000000000000000001;
+
+        public override UnityEngine.Quaternion Value
+        {
+            get { return (UnityEngine.Quaternion)(coherenceSync.coherenceRotation); }
+            set { coherenceSync.coherenceRotation = (UnityEngine.Quaternion)(value); }
+        }
+
+        protected override (UnityEngine.Quaternion value, AbsoluteSimulationFrame simFrame) ReadComponentData(ICoherenceComponentData coherenceComponent, Vector3 floatingOriginDelta)
+        {
+            var value = ((WorldOrientation)coherenceComponent).value;
+
+            var simFrame = ((WorldOrientation)coherenceComponent).valueSimulationFrame;
+            
+            return (value, simFrame);
+        }
+
+        public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent, AbsoluteSimulationFrame simFrame)
+        {
+            var update = (WorldOrientation)coherenceComponent;
+            if (Interpolator.IsInterpolationNone)
+            {
+                update.value = Value;
+            }
+            else
+            {
+                update.value = GetInterpolatedAt(simFrame / InterpolationSettings.SimulationFramesPerSecond);
+            }
+
+            update.valueSimulationFrame = simFrame;
+            
+            return update;
+        }
+
+        public override ICoherenceComponentData CreateComponentData()
+        {
+            return new WorldOrientation();
+        }    
+    }
 
     [UnityEngine.Scripting.Preserve]
     public class CoherenceSync_7c751ec26a8223d4789f4058354a755f : CoherenceSyncBaked
@@ -82,6 +133,7 @@ namespace Coherence.Generated
         private Entity entityId;
         private Logger logger = Coherence.Log.Log.GetLogger<CoherenceSync_7c751ec26a8223d4789f4058354a755f>();
         
+        private global::AnimationSync _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c_CommandTarget;
         
         
         private IClient client;
@@ -90,12 +142,14 @@ namespace Coherence.Generated
         private readonly Dictionary<string, Binding> bakedValueBindings = new Dictionary<string, Binding>()
         {
 			["662ed08687a545399fb2fe735a33cc30"] = new Binding_7c751ec26a8223d4789f4058354a755f_662ed08687a545399fb2fe735a33cc30(),
+			["38455a63418e498ca672325934845ab5"] = new Binding_7c751ec26a8223d4789f4058354a755f_38455a63418e498ca672325934845ab5(),
         };
         
         private Dictionary<string, Action<CommandBinding, CommandsHandler>> bakedCommandBindings = new Dictionary<string, Action<CommandBinding, CommandsHandler>>();
         
         public CoherenceSync_7c751ec26a8223d4789f4058354a755f()
         {
+            bakedCommandBindings.Add("820c5828d87842c4a2e63920ffc0c16c", BakeCommandBinding__7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c);
         }
         
         public override Binding BakeValueBinding(Binding valueBinding)
@@ -116,11 +170,59 @@ namespace Coherence.Generated
                 commandBindingBaker.Invoke(commandBinding, commandsHandler);
             }
         }
+        private void BakeCommandBinding__7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c(CommandBinding commandBinding, CommandsHandler commandsHandler)
+        {
+            _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c_CommandTarget = (global::AnimationSync)commandBinding.UnityComponent;
+            commandsHandler.AddBakedCommand(
+            	"AnimationSync.SetBool",
+            	"(System.StringSystem.Boolean)",
+            	SendCommand__7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c,
+            	ReceiveLocalCommand__7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c,
+            	MessageTarget.All,
+            	_7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c_CommandTarget,
+            	commandBinding.UsesMeta());
+        }
+        
+        private void SendCommand__7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c(GenericCommandRequestArgs requestArgs)
+        {
+            var command = new _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c();
+            command.Frame = requestArgs.Frame;
+            command.SenderClientID = requestArgs.Sender;
+            command.UsesMeta = requestArgs.UsesMeta;
+            command.Target = requestArgs.Target;
+            command.Entity = entityId;
+
+            command.animName = (System.String)requestArgs.Args[0];
+            command.value = (System.Boolean)requestArgs.Args[1];
+
+            client.SendCommand(command, requestArgs.ChannelID);
+        }
+        
+        private void ReceiveLocalCommand__7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c(GenericCommandRequestArgs requestArgs)
+        {
+            var command = new _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c();
+            command.Frame = requestArgs.Frame;
+            command.SenderClientID = requestArgs.Sender;
+
+            command.animName = (System.String)requestArgs.Args[0];
+            command.value = (System.Boolean)requestArgs.Args[1];
+
+            ReceiveCommand__7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c(command);
+        }
+
+        private void ReceiveCommand__7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c(_7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c command)
+        {
+            var target = _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c_CommandTarget;
+			target.SetBool((System.String)(command.animName),(System.Boolean)(command.value));
+        }
         
         public override void ReceiveCommand(IEntityCommand command)
         {
             switch (command)
             {
+                case _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c castedCommand:
+                    ReceiveCommand__7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c(castedCommand);
+                    break;
                 default:
                     logger.Warning(Coherence.Log.Warning.ToolkitBakedSyncReceiveCommandUnhandled,
                         $"CoherenceSync_7c751ec26a8223d4789f4058354a755f Unhandled command: {command.GetType()}.");

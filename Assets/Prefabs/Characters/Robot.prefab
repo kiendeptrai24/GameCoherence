@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6006073446716517371}
   - component: {fileID: 3899692763738039113}
   - component: {fileID: 3053852324858064735}
+  - component: {fileID: 15721462467649842}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -136,6 +137,8 @@ MonoBehaviour:
     - component: {fileID: 4154722693034885884}
       lodStepsActive: 1
     - component: {fileID: 3053852324858064735}
+      lodStepsActive: 1
+    - component: {fileID: 15721462467649842}
       lodStepsActive: 1
     GeneratesArchetypeDefinition: 0
   interpolationLocation: 1
@@ -318,6 +321,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0102983ced35b534d9fd65f9a0b146ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+--- !u!114 &15721462467649842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006073446716517370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498436a28e3147141a83be3bf9abb421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6006073445034829250
