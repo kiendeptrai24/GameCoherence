@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f4a509fd2f994fa391c0c78ea3f11, type: 3}
+  m_Name: Messege
+  m_EditorClassIdentifier: 
+  id: ebd8dda8688470340af97f69a9c4d9de
+  selfId: e4c13db199845864b803f48525fa7c77
+  editorTarget: {fileID: 7322199614238671067, guid: ebd8dda8688470340af97f69a9c4d9de, type: 3}
+  includeInSchema: 1
+  objectProvider:
+    rid: 2856077647277981748
+  objectInstantiator:
+    rid: 2856077647277981749
+  references:
+    version: 2
+    RefIds:
+    - rid: 2856077647277981748
+      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data:
+        prefab: {fileID: 7322199614238671067, guid: ebd8dda8688470340af97f69a9c4d9de, type: 3}
+    - rid: 2856077647277981749
+      type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data: 

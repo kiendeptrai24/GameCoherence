@@ -29,7 +29,9 @@ namespace Coherence.Samples.Kien
         public event Action<RequestResponse<IReadOnlyList<RoomData>>> OnRoomsFetched;
         public event Action<RequestResponse<RoomData>> OnRoomCreated;
         public event Action<RequestResponse<IReadOnlyList<string>>> OnRegionsChanged;
+        public event Action<CoherenceClientConnectionManager> OnClientSynced;
         public event Action<ConnectionException> OnConnectionError;
+        public event Action OnJoinWorld;
         public event Action OnBridgeConnected;
         public event Action OnBridgeDisconnected;
 
@@ -42,7 +44,7 @@ namespace Coherence.Samples.Kien
         }
         private IEnumerator Start()
         {
-            yield return null; 
+            yield return null;
             if (!CoherenceBridgeStore.TryGetBridge(SceneManager.GetActiveScene(), out bridge))
             {
                 Debug.LogError("Bridge not found yet.");
@@ -50,6 +52,7 @@ namespace Coherence.Samples.Kien
             bridge.onConnected.AddListener((_) => { OnBridgeConnected?.Invoke(); });
             bridge.onDisconnected.AddListener((_, _) => { OnBridgeDisconnected?.Invoke(); });
             bridge.onConnectionError.AddListener((_, e) => { OnConnectionError?.Invoke(e); });
+            bridge.ClientConnections.OnSynced += OnClientSynced;
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -121,7 +124,7 @@ namespace Coherence.Samples.Kien
         public void JoinRoom(RoomData roomData)
         {
             bridge.JoinRoom(roomData);
-            SceneLoadManager.Instance.LoadRegularScene("Game");
+            OnJoinWorld?.Invoke();
         }
 
         public void Disconnect()

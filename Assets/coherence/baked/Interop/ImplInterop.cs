@@ -349,6 +349,8 @@ namespace Coherence.Generated
                   case 3: return AdoptOrphan.FromInterop(data, dataSize);
                   case 4: return PersistenceReady.FromInterop(data, dataSize);
                   case 5: return SceneIndexChanged.FromInterop(data, dataSize);
+                  case 6: return _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2.FromInterop(data, dataSize);
+                  case 7: return _ebd8dda8688470340af97f69a9c4d9de_c81e2014c5d24664992a72dc70220deb.FromInterop(data, dataSize);
             }
 
             throw new ArgumentException($"Unkown command type {type}", nameof(type));
@@ -426,6 +428,25 @@ namespace Coherence.Generated
                     return sender.SendCommand(entity, target, type, val, 4);
 
                 }
+                case 6:
+                {
+                    var orig = (_ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2)command;
+                    var val = new _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2.Interop();
+
+
+                    return sender.SendCommand(entity, target, type, val, 0);
+
+                }
+                case 7:
+                {
+                    var orig = (_ebd8dda8688470340af97f69a9c4d9de_c81e2014c5d24664992a72dc70220deb)command;
+                    var val = new _ebd8dda8688470340af97f69a9c4d9de_c81e2014c5d24664992a72dc70220deb.Interop();
+
+                    var pinnedmessage = orig.message != null ? Encoding.UTF8.GetBytes(orig.message) : null; fixed (void* pinnedPtrmessage = pinnedmessage) { val.message = new ByteArray { Data = pinnedPtrmessage, Length =  pinnedmessage?.Length ?? 0 };
+
+                    return sender.SendCommand(entity, target, type, val, 16);
+
+}                }
             }
 
             throw new NotImplementedException($"Failed to send a command with type {type}.");

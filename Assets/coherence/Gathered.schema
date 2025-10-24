@@ -15,6 +15,11 @@ component _a0e6252c4d09f4fb28257804194356b6_5156161361901559470 [id "21"]
 component _ba50eecfd968a47c38959f27b05771b6_5459872012036489579 [id "22"]
   timer Float [range-min "-9223372036854775808", range-max "9223372036854775807", compression "None"]
 
+command _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2 [id "6", routing "All"]
+
+command _ebd8dda8688470340af97f69a9c4d9de_c81e2014c5d24664992a72dc70220deb [id "7", routing "All"]
+  message String 
+
 archetype _27f1ac5097d4ee4409fbb87ad14f76c2 [id "0"]
   lod 0
     WorldPosition [id "23", base-id "0"]

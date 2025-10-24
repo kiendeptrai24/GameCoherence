@@ -1,25 +1,34 @@
+using Coherence;
 using Coherence.Toolkit;
+using TMPro;
 using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    CoherenceSync sync;
+    CoherenceClientConnection myConnection;
+    public CoherenceSync _counterSync;
     void Start()
     {
-        sync = GetComponent<CoherenceSync>();
+        var bridge = FindAnyObjectByType<CoherenceBridge>();
+        _counterSync = GetComponent<CoherenceSync>();
+        myConnection = bridge.ClientConnections.GetMine();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(sync.HasInputAuthority)
-        {
-            
-        }
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         transform.Translate(move * Time.deltaTime * 8, Space.World);
         transform.forward = Vector3.Lerp(transform.forward, move, Time.deltaTime * 8);
-        
+
+    }
+    public void SendCommand()
+    {
+        Debug.Log("SendCommand");
+    }
+    public void OnChatMessage(string message)
+    {
+        Debug.Log($"Received chat message: {message}");
     }
 }

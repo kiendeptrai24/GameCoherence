@@ -848,6 +848,7 @@ MonoBehaviour:
     - line: '|   webGLCloseOnQuit: 0'
     - line: '|   webWasm2023: 0'
     - line: '|   scriptingDefineSymbols:'
+    - line: '|     Server: '
     - line: '|     Standalone: '
     - line: '|   additionalCompilerArguments: {}'
     - line: '|   platformArchitecture: {}'

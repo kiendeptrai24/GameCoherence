@@ -112,8 +112,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -2689089505949970162, guid: 7a442c01aaa054fa4b78984ca94cfe8e,
-    type: 3}
+  m_Motion: {fileID: -2689089505949970162, guid: 7a442c01aaa054fa4b78984ca94cfe8e, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -141,8 +140,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: f866ec93746024473a1bc07c4c936e23,
-    type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: f866ec93746024473a1bc07c4c936e23, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -316,8 +314,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -2056006510712403265, guid: 7a442c01aaa054fa4b78984ca94cfe8e,
-    type: 3}
+  m_Motion: {fileID: -2056006510712403265, guid: 7a442c01aaa054fa4b78984ca94cfe8e, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -441,8 +438,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 7a442c01aaa054fa4b78984ca94cfe8e,
-    type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 7a442c01aaa054fa4b78984ca94cfe8e, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -512,43 +508,43 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: MoveSpeed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Grounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: CarryingSmall
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: CarryingBig
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Wave
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Plant
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -642,7 +638,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 240, z: 0}
   m_ExitPosition: {x: 880, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 8887956153739496825}
+  m_DefaultState: {fileID: 4023543256014927044}
 --- !u!1102 &1879990176466983473
 AnimatorState:
   serializedVersion: 6
@@ -807,8 +803,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: 9501ae010c5ae4661a5573bd393d94b2,
-      type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: 9501ae010c5ae4661a5573bd393d94b2, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1.2
@@ -816,8 +811,7 @@ BlendTree:
     m_DirectBlendParameter: MoveSpeed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: cd2895737f4f24c3f86c34e1e953f78d,
-      type: 3}
+    m_Motion: {fileID: 1827226128182048838, guid: cd2895737f4f24c3f86c34e1e953f78d, type: 3}
     m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1.6
@@ -953,8 +947,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: d817852a06a1743eda210167fe0819c2,
-    type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: d817852a06a1743eda210167fe0819c2, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

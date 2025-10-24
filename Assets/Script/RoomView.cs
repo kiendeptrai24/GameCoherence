@@ -10,9 +10,8 @@ namespace Coherence.Samples.Kien
 
     public class RoomView : MonoBehaviour
     {
-        public static RoomView Instance { get; private set; }
-
         [Header("References")]
+        public GameObject dashBoard;
         public GameObject connectDialog;
         public GameObject disconnectDialog;
         public GameObject createRoomPanel;
@@ -66,10 +65,6 @@ namespace Coherence.Samples.Kien
 
         private void Awake()
         {
-            if (Instance == null)
-                Instance = this;
-            else
-                Destroy(gameObject);
 
             if (SimulatorUtility.IsSimulator)
             {
@@ -125,6 +120,7 @@ namespace Coherence.Samples.Kien
             disconnectButton.onClick.RemoveListener(OnDisconnectClicked);
             popupDismissButton.onClick.RemoveListener(OnPopupDismissClicked);
         }
+        public void SetActiveDashBoard(bool isActive) => dashBoard.SetActive(isActive);
 
         public void UpdateUIState(UIState state)
         {

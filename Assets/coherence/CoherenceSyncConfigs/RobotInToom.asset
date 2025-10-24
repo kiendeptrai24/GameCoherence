@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f4a509fd2f994fa391c0c78ea3f11, type: 3}
+  m_Name: RobotInToom
+  m_EditorClassIdentifier: 
+  id: 13bf97e5ff370b84290f52978ccc9803
+  selfId: f50568c9c694def45a16bdf32c5f3f09
+  editorTarget: {fileID: 1824068539701200199, guid: 13bf97e5ff370b84290f52978ccc9803, type: 3}
+  includeInSchema: 1
+  objectProvider:
+    rid: 2856077643836293832
+  objectInstantiator:
+    rid: 2856077643836293784
+  references:
+    version: 2
+    RefIds:
+    - rid: 2856077643836293784
+      type: {class: DefaultInstantiator, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data: 
+    - rid: 2856077643836293832
+      type: {class: DirectReferenceProvider, ns: Coherence.Toolkit, asm: Coherence.Toolkit}
+      data:
+        prefab: {fileID: 1824068539701200199, guid: 13bf97e5ff370b84290f52978ccc9803, type: 3}

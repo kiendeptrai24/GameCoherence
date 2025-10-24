@@ -24,7 +24,6 @@ namespace Coherence.Samples.Kien
         private readonly Dictionary<PlayerInteractable.CharactorType, GameObject> _activeUsers = new();
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
             _spawner = NetworkObjectSpawner.Instance;
 
             foreach (CharactorSelect user in userPrefabs)

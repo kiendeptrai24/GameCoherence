@@ -4,11 +4,15 @@ namespace Coherence.Samples.Kien
     using System.Collections.Generic;
     using System.Threading;
     using Cloud;
+    using Coherence.Toolkit;
     using Connection;
     using UnityEngine;
+    using UnityEngine.UI;
 
     public class RoomPresenter : MonoBehaviour
     {
+        [SerializeField] private GameObject gamebject;
+        public Button button;
         private RoomView view;
         private LobbyManager lobbyManager;
         private UIState onlineModeUIState = UIState.LoadingSpinner;
@@ -16,7 +20,8 @@ namespace Coherence.Samples.Kien
         private bool wasCloudModeEnabled = true;
         private bool joinNextCreatedRoom;
         private ulong lastCreatedRoomUid;
-        private void Awake() {
+        private void Awake()
+        {
             // Add component
             lobbyManager = FindAnyObjectByType<LobbyManager>();
             view = GetComponent<RoomView>();
@@ -40,6 +45,22 @@ namespace Coherence.Samples.Kien
             lobbyManager.OnConnectionError += OnConnectionError;
             lobbyManager.OnBridgeConnected += () => view.UpdateDialogsVisibility(true);
             lobbyManager.OnBridgeDisconnected += () => view.UpdateDialogsVisibility(false);
+            lobbyManager.OnJoinWorld += OnClientJoinWorld;
+            lobbyManager.OnClientSynced += OnClientSynced;
+            button.onClick.AddListener(() => { SceneLoadManager.Instance.LoadRegularScene("Room"); });
+
+        }
+
+        private void OnClientSynced(CoherenceClientConnectionManager manager)
+        {
+            // Debug.Log(manager.GetAllClients());
+            //view.SetActiveDashBoard(false);
+            Instantiate(gamebject, Vector3.zero, Quaternion.identity);
+        }
+
+        private void OnClientJoinWorld()
+        {
+
         }
 
         public void Initialize()

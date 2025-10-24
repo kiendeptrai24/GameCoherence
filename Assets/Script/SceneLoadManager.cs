@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Threading.Tasks;
+using Coherence.Toolkit;
+using System;
 namespace Coherence.Samples.Kien
 {
     public class SceneLoadManager : Singleton<SceneLoadManager>
@@ -9,15 +10,23 @@ namespace Coherence.Samples.Kien
         [SerializeField]
         private string firstSceneToLoad = "MenuUI";
         public bool loadFisrtScene = true;
+        private CoherenceBridge _bridge;
 
 
         protected void Awake()
         {
             DontDestroyOnLoad(gameObject);
-
+            _bridge = FindAnyObjectByType<CoherenceBridge>();
             if (firstSceneToLoad.Length > 0 && loadFisrtScene)
                 LoadRegularScene(firstSceneToLoad, false);
+            // SceneManager.sceneLoaded += OnSceneLoaded;
         }
+
+        // private void OnSceneLoaded(Scene scene, LoadSceneMode arg1)
+        // {
+        //     _bridge.SceneManager.SetClientScene(scene.buildIndex);
+        //     _bridge.InstantiationScene = scene;
+        // }
 
         public void SubscribeOnNetworkEvents()
         {
@@ -40,9 +49,9 @@ namespace Coherence.Samples.Kien
         public void LoadNetworkScene(string sceneName)
         {
             //Switch to loading scene first
-            SceneManager.LoadScene("LoadingScene");
+            //SceneManager.LoadScene("LoadingScene");
 
-            SubscribeOnNetworkEvents();
+            //SubscribeOnNetworkEvents();
             // NetworkManager.Singleton.SceneManager.SetClientSynchronizationMode(LoadSceneMode.Additive);
             // NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         }
@@ -64,10 +73,11 @@ namespace Coherence.Samples.Kien
         {
             if (useLoadScene)
             {
-                SceneManager.LoadScene("LoadingScene");
+                SceneManager.LoadScene("LoadingScene", LoadSceneMode.Additive);
                 yield return new WaitForSeconds(1f);
+                SceneManager.UnloadSceneAsync("LoadingScene");
             }
-            yield return SceneManager.LoadSceneAsync(sceneToLoad);
+            yield return SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         }
     }
 }
