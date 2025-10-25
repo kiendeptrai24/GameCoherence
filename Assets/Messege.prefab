@@ -1005,7 +1005,7 @@ MonoBehaviour:
   preserveChildren: 0
   bindings:
   - rid: 2856077679434400617
-  - rid: 2856077682415763777
+  - rid: 2856077685474984004
   scenePrefabInstanceUUID: 
   coherenceUUID: 
   assetVersion: 
@@ -1067,16 +1067,32 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
-    - rid: 2856077682415763777
+    - rid: 2856077682415763824
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 551026952442551530}
+    - rid: 2856077682415763825
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 1192834508234216261}
+    - rid: 2856077682415763826
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 6373020177372410255}
+    - rid: 2856077682415763827
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 3101337517298977693}
+    - rid: 2856077685474984004
       type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
         descriptor:
-          rid: 2856077682415763778
+          rid: 2856077685474984005
         routing: 1
         syncMode: 0
         isPredicted: 0
         predictionMode: 0
-        guid: e71aa73556044a0cb4d8c5b67c1bff98
+        guid: 91bf60f4f7a0427490846f03cc50ba52
         archetypeData:
           type: 0
           minRange: 0
@@ -1087,10 +1103,10 @@ MonoBehaviour:
         unityComponent: {fileID: 551026952442551530}
         coherenceSync: {fileID: 8941730607243212448}
         interpolationSettings: {fileID: 0}
-    - rid: 2856077682415763778
+    - rid: 2856077685474984005
       type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
-        name: SendMessege
+        name: ReceiveMessege
         monoAssemblyType: 
         required: 0
         enforcesLODingWhenFieldsOverriden: 0
@@ -1109,22 +1125,6 @@ MonoBehaviour:
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
-    - rid: 2856077682415763824
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 551026952442551530}
-    - rid: 2856077682415763825
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 1192834508234216261}
-    - rid: 2856077682415763826
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 6373020177372410255}
-    - rid: 2856077682415763827
-      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
-      data:
-        component: {fileID: 3101337517298977693}
 --- !u!114 &551026952442551530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,7 +1137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adee41cd78a2a1349834f99c088915f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sync: {fileID: 0}
   sendButton: {fileID: 1845112555184425017}
   play: {fileID: 1725751165365771977}
   chatInputField: {fileID: 3185743756569082528}
@@ -1625,7 +1624,7 @@ GameObject:
   - component: {fileID: 7150871192801225998}
   - component: {fileID: 1725751165365771977}
   m_Layer: 5
-  m_Name: Button
+  m_Name: PlayGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1648,8 +1647,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -88, y: 67}
-  m_SizeDelta: {x: 261.1434, y: 72.2965}
+  m_AnchoredPosition: {x: -19.428223, y: 116.851746}
+  m_SizeDelta: {x: 243.1434, y: 68.2965}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &8267628801415663813
 CanvasRenderer:

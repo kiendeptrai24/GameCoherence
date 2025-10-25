@@ -17,7 +17,7 @@ namespace Coherence.Generated
     using System.Runtime.InteropServices;
     using UnityEngine;
 
-    public struct _a62034e61e33e3841abb0b8f8962eb9d_e71aa73556044a0cb4d8c5b67c1bff98 : IEntityCommand
+    public struct _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52 : IEntityCommand
     {
         [StructLayout(LayoutKind.Explicit)]
         public struct Interop
@@ -26,14 +26,14 @@ namespace Coherence.Generated
             public ByteArray message;
         }
 
-        public static unsafe _a62034e61e33e3841abb0b8f8962eb9d_e71aa73556044a0cb4d8c5b67c1bff98 FromInterop(System.IntPtr data, System.Int32 dataSize) 
+        public static unsafe _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52 FromInterop(System.IntPtr data, System.Int32 dataSize) 
         {
             if (dataSize != 16) {
                 throw new System.Exception($"Given data size is not equal to the struct size. ({dataSize} != 16) " +
                     "for command with ID 8");
             }
 
-            var orig = new _a62034e61e33e3841abb0b8f8962eb9d_e71aa73556044a0cb4d8c5b67c1bff98();
+            var orig = new _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52();
             var comp = (Interop*)data;
             orig.message = comp->message.Data != null ? System.Text.Encoding.UTF8.GetString((byte*)comp->message.Data, (int)comp->message.Length) : null;
             return orig;
@@ -87,7 +87,7 @@ namespace Coherence.Generated
         public void NullEntityRefs(Entity entity) {
         }
         
-        public _a62034e61e33e3841abb0b8f8962eb9d_e71aa73556044a0cb4d8c5b67c1bff98(
+        public _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52(
             Entity entity,
             System.String message
         )
@@ -104,16 +104,16 @@ namespace Coherence.Generated
             this.message = message; 
         }
         
-        public static void Serialize(_a62034e61e33e3841abb0b8f8962eb9d_e71aa73556044a0cb4d8c5b67c1bff98 commandData, IOutProtocolBitStream bitStream)
+        public static void Serialize(_a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52 commandData, IOutProtocolBitStream bitStream)
         {
             bitStream.WriteShortString(commandData.message);
         }
         
-        public static _a62034e61e33e3841abb0b8f8962eb9d_e71aa73556044a0cb4d8c5b67c1bff98 Deserialize(IInProtocolBitStream bitStream, Entity entity, MessageTarget target)
+        public static _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52 Deserialize(IInProtocolBitStream bitStream, Entity entity, MessageTarget target)
         {
             var datamessage = bitStream.ReadShortString();
     
-            return new _a62034e61e33e3841abb0b8f8962eb9d_e71aa73556044a0cb4d8c5b67c1bff98()
+            return new _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52()
             {
                 Entity = entity,
                 Routing = target,

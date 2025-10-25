@@ -11,8 +11,6 @@ namespace Coherence.Samples.Kien
 
     public class RoomPresenter : MonoBehaviour
     {
-        [SerializeField] private GameObject gamebject;
-        public Button button;
         private RoomView view;
         private LobbyManager lobbyManager;
         private UIState onlineModeUIState = UIState.LoadingSpinner;
@@ -47,21 +45,11 @@ namespace Coherence.Samples.Kien
             lobbyManager.OnBridgeDisconnected += () => view.UpdateDialogsVisibility(false);
             lobbyManager.OnJoinWorld += OnClientJoinWorld;
             lobbyManager.OnClientSynced += OnClientSynced;
-            button.onClick.AddListener(() => { SceneLoadManager.Instance.LoadRegularScene("Room"); });
-
         }
-
         private void OnClientSynced(CoherenceClientConnectionManager manager)
         {
             view.SetActiveDashBoard(false);
-            //SceneLoadManager.Instance.LoadRegularScene("Room");
-            var bridge = FindAnyObjectByType<CoherenceBridge>();
-
-            var spawned = Instantiate(gamebject, Vector3.zero, Quaternion.identity);
-            var sync = spawned.GetComponent<CoherenceSync>();
-            sync.TransferAuthority(bridge.ClientID);
         }
-
         private void OnClientJoinWorld()
         {
 

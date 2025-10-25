@@ -21,14 +21,10 @@ namespace Coherence.Samples.Kien
 
         }
         private void Start() {
-            
-            // Giữ bridge khi load scene mới
             DontDestroyOnLoad(_bridge.gameObject);
 
-            // Cho CoherenceSync biết bridge này là default
             CoherenceSync.BridgeResolve += _ => _bridge;
 
-            // Gắn callback khi load scene mới
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
@@ -40,7 +36,6 @@ namespace Coherence.Samples.Kien
             _bridge.SceneManager.SetClientScene(scene.buildIndex);
 
             // Cho bridge spawn entity trong scene mới
-            Debug.Log(scene.name);
             _bridge.InstantiationScene = scene;
 
             // Đặt scene mới làm active sau 1 frame
@@ -60,35 +55,6 @@ namespace Coherence.Samples.Kien
                 Debug.LogWarning($"⚠️ Scene {scene.name} không hợp lệ để set active.");
             }
         }
-
-        public void SubscribeOnNetworkEvents()
-        {
-            // //On host prepared scene to load
-            // NetworkManager.Singleton.SceneManager.OnSynchronize += (clientId) =>
-            // {
-            //     //Works on client side only
-            //     if (NetworkManager.Singleton.LocalClientId == clientId)
-            //         SceneManager.LoadScene("LoadingScene");
-
-            // };
-
-            // //On host loading scene
-            // NetworkManager.Singleton.SceneManager.OnLoad += (clientId, sceneName, mode, sceneLoadOperation) =>
-            // {
-            //     StartCoroutine(ProcessNetworkSceneLoading(sceneLoadOperation));
-            // };
-        }
-
-        public void LoadNetworkScene(string sceneName)
-        {
-            //Switch to loading scene first
-            //SceneManager.LoadScene("LoadingScene");
-
-            //SubscribeOnNetworkEvents();
-            // NetworkManager.Singleton.SceneManager.SetClientSynchronizationMode(LoadSceneMode.Additive);
-            // NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
-        }
-
         public void LoadRegularScene(string sceneName, bool useLoadScreen = true)
         {
             Debug.Log("Loading scene: " + sceneName);

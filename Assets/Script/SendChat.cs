@@ -7,7 +7,7 @@ using Coherence.Samples.Kien;
 
 public class SendChat : MonoBehaviour
 {
-    public CoherenceSync _sync;
+    private CoherenceSync _sync;
     [SerializeField] private Button sendButton;
     [SerializeField] private Button play;
     public TMP_InputField chatInputField;
@@ -18,20 +18,24 @@ public class SendChat : MonoBehaviour
         sendButton.onClick.AddListener(() =>
         {
             Debug.Log("onClick");
-            if (_sync != null)
-            {
-                Debug.Log("Send message");
-                if (string.IsNullOrWhiteSpace(chatInputField.text)) return;
-                _sync.SendCommand<SendChat>(nameof(SendMessege), MessageTarget.Other, chatInputField.text);
-                chatInputField.text = "";
-            }
+            ClientSendMessage(chatInputField.text);
         });
         play.onClick.AddListener(() =>
         {
             SceneLoadManager.Instance.LoadRegularScene("Game");
         });
     }
-    public void SendMessege(string message)
+    private void ClientSendMessage(string message)
+    {
+        if (_sync == null) return;
+
+        if (string.IsNullOrWhiteSpace(message)) return;
+        Debug.Log("Send message");
+        _sync.SendCommand<SendChat>(nameof(ReceiveMessege), MessageTarget.Other, message);
+        chatInputField.text = "";
+    }
+
+    public void ReceiveMessege(string message)
     {
         // if (client == _sync)
         // {
