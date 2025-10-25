@@ -53,6 +53,8 @@ namespace Coherence.Samples.Kien
             _spawner.SpawnNetworkObject(prefab, position, rotation, obj =>
             {
                 _charInfo.charactor.prefab = GetPrefabByType(_charInfo.charactor.type);
+                var charactor = obj.GetComponent<Charactor>();
+                charactor.SetName(_charInfo.charactor.name);
             });
         }
 

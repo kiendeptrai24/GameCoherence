@@ -1,4 +1,5 @@
 using Coherence.Toolkit;
+using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -11,25 +12,22 @@ public abstract class Charactor : MonoBehaviour
     public IStateMachine stateMachine;
     public IMovement m_movement;
     public Animator anim;
+    [SerializeField] protected TMP_Text charactorName;
     protected virtual void Awake()
     {
         anim = GetComponentInChildren<Animator>();
         m_movement = GetComponent<IMovement>();
         CoherenceBridgeStore.TryGetBridge(gameObject.scene, out _coherenceBridge);
-        _coherenceBridge.onLiveQuerySynced.AddListener(OnLiveQuerySynced);
+        CreateCinemachineCamera();
     }
     protected virtual void Start()
     {
     }
-    private void OnLiveQuerySynced(CoherenceBridge arg0)
-    {
-        CreateCinemachineCamera();
-    }
-
     private void CreateCinemachineCamera()
     {
         if (_cmCameraPrefab == null) return;
         CinemachineCamera cinemachineCamera = Instantiate(_cmCameraPrefab);
         cinemachineCamera.Target.TrackingTarget = cinemachineCamera.Target.LookAtTarget = transform;
     }
+    public void SetName(string name) => charactorName.text = name;
 }

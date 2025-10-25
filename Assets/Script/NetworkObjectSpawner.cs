@@ -35,6 +35,7 @@ public class NetworkObjectSpawner : Singleton<NetworkObjectSpawner>
         var spawned = Instantiate(prefab, position, rotation);
         var sync = spawned.GetComponent<CoherenceSync>();
         sync.TransferAuthority(_bridge.ClientID);
+        onSpawned?.Invoke(spawned);
         
     }
 }

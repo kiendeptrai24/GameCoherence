@@ -351,6 +351,7 @@ namespace Coherence.Generated
                   case 8: return _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52.FromInterop(data, dataSize);
                   case 9: return _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e.FromInterop(data, dataSize);
                   case 10: return _ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742.FromInterop(data, dataSize);
+                  case 11: return _f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c.FromInterop(data, dataSize);
             }
 
             throw new ArgumentException($"Unkown command type {type}", nameof(type));
@@ -480,6 +481,16 @@ namespace Coherence.Generated
                     val.value = orig.value;
 
                     return sender.SendCommand(entity, target, type, val, 20);
+
+}                }
+                case 11:
+                {
+                    var orig = (_f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c)command;
+                    var val = new _f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c.Interop();
+
+                    var pinnedmessage = orig.message != null ? Encoding.UTF8.GetBytes(orig.message) : null; fixed (void* pinnedPtrmessage = pinnedmessage) { val.message = new ByteArray { Data = pinnedPtrmessage, Length =  pinnedmessage?.Length ?? 0 };
+
+                    return sender.SendCommand(entity, target, type, val, 16);
 
 }                }
             }
