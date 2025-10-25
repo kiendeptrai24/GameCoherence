@@ -33,7 +33,7 @@ namespace Coherence.FirstSteps
 
             landParticles.Play();
         }
-        public void AnimtionTrigger() => player.m_playerSM.GetFeature<AnimationTrigger>()?.AnimationTrigger();
+        public void AnimtionTrigger() => player.m_playerSM.GetFeature<IAnimationTrigger>()?.AnimationTrigger();
 
         public void PlayJumpParticles()
         {

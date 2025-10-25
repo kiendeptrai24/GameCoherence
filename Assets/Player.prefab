@@ -5731,6 +5731,7 @@ MonoBehaviour:
   - rid: 2856077623013408952
   - rid: 2856077670158172305
   - rid: 2856077671702201119
+  - rid: 2856077679434399953
   scenePrefabInstanceUUID: 
   coherenceUUID: 
   assetVersion: 
@@ -5891,6 +5892,49 @@ MonoBehaviour:
       type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
       data:
         component: {fileID: 3609947180033744284}
+    - rid: 2856077679434399953
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 2856077679434399954
+        routing: 1
+        syncMode: 0
+        isPredicted: 0
+        predictionMode: 0
+        guid: 0cbf608705044c5ebf3b857a6e3d19f8
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+        unityComponent: {fileID: 3609947180033744284}
+        coherenceSync: {fileID: 6067481835141850881}
+        interpolationSettings: {fileID: 0}
+    - rid: 2856077679434399954
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: SetFloat
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes:
+        - System.String, mscorlib
+        - System.Int32, mscorlib
+        ownerType:
+          assemblyQualifiedName: AnimationSync, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        defaultSyncMode: 0
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
 --- !u!54 &8524558218766284206
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5994,6 +6038,7 @@ MonoBehaviour:
     m_Bits: 128
   raycastDistance: 100
   effect: {fileID: 4211463725169676445, guid: d173a30c80743c74dbe6a58735fc5e08, type: 3}
+  navMeshAgent: {fileID: 0}
 --- !u!114 &3609947180033744284
 MonoBehaviour:
   m_ObjectHideFlags: 0

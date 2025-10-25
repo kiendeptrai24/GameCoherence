@@ -1,6 +1,6 @@
 
 
-public interface AnimationTrigger
+public interface IAnimationTrigger
 {
     public void AnimationTrigger();
 }

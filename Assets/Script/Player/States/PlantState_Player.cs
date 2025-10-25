@@ -1,4 +1,5 @@
 using System;
+using Coherence;
 using Coherence.Toolkit;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -21,6 +22,17 @@ public class PlantState_Player : PlayerState
         base.Excute();
         if (Input.GetKeyDown(KeyCode.F))
             m_machine.ChangeState<IdleState_Player>();
+        if (Mathf.Abs(m_player.m_movement.GetVelocity().magnitude) > 0)
+        {
+            m_anim.SetFloat("MovemntVelocity", 1);
+            m_sync.SendCommand<AnimationSync>(nameof(AnimationSync.SetFloat), MessageTarget.Other, "MovemntVelocity", 1);
+        }
+        if (Mathf.Abs(m_player.m_movement.GetVelocity().magnitude) == 0)
+        {
+            m_anim.SetFloat("MovemntVelocity", 0);
+            m_sync.SendCommand<AnimationSync>(nameof(AnimationSync.SetFloat), MessageTarget.Other, "MovemntVelocity", 0);
+        }
+            
     }
     public override void Exit()
     {

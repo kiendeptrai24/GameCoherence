@@ -349,9 +349,12 @@ namespace Coherence.Generated
                   case 3: return AdoptOrphan.FromInterop(data, dataSize);
                   case 4: return PersistenceReady.FromInterop(data, dataSize);
                   case 5: return SceneIndexChanged.FromInterop(data, dataSize);
-                  case 6: return _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c.FromInterop(data, dataSize);
-                  case 7: return _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2.FromInterop(data, dataSize);
-                  case 8: return _ebd8dda8688470340af97f69a9c4d9de_c81e2014c5d24664992a72dc70220deb.FromInterop(data, dataSize);
+                  case 6: return _7c751ec26a8223d4789f4058354a755f_0cbf608705044c5ebf3b857a6e3d19f8.FromInterop(data, dataSize);
+                  case 7: return _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c.FromInterop(data, dataSize);
+                  case 8: return _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e.FromInterop(data, dataSize);
+                  case 9: return _ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742.FromInterop(data, dataSize);
+                  case 10: return _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2.FromInterop(data, dataSize);
+                  case 11: return _ebd8dda8688470340af97f69a9c4d9de_c81e2014c5d24664992a72dc70220deb.FromInterop(data, dataSize);
             }
 
             throw new ArgumentException($"Unkown command type {type}", nameof(type));
@@ -431,6 +434,17 @@ namespace Coherence.Generated
                 }
                 case 6:
                 {
+                    var orig = (_7c751ec26a8223d4789f4058354a755f_0cbf608705044c5ebf3b857a6e3d19f8)command;
+                    var val = new _7c751ec26a8223d4789f4058354a755f_0cbf608705044c5ebf3b857a6e3d19f8.Interop();
+
+                    var pinnedanimName = orig.animName != null ? Encoding.UTF8.GetBytes(orig.animName) : null; fixed (void* pinnedPtranimName = pinnedanimName) { val.animName = new ByteArray { Data = pinnedPtranimName, Length =  pinnedanimName?.Length ?? 0 };
+                    val.value = orig.value;
+
+                    return sender.SendCommand(entity, target, type, val, 20);
+
+}                }
+                case 7:
+                {
                     var orig = (_7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c)command;
                     var val = new _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c.Interop();
 
@@ -440,7 +454,29 @@ namespace Coherence.Generated
                     return sender.SendCommand(entity, target, type, val, 17);
 
 }                }
-                case 7:
+                case 8:
+                {
+                    var orig = (_ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e)command;
+                    var val = new _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e.Interop();
+
+                    var pinnedanimName = orig.animName != null ? Encoding.UTF8.GetBytes(orig.animName) : null; fixed (void* pinnedPtranimName = pinnedanimName) { val.animName = new ByteArray { Data = pinnedPtranimName, Length =  pinnedanimName?.Length ?? 0 };
+                    val.value = orig.value ? (System.Byte)1 : (System.Byte)0;
+
+                    return sender.SendCommand(entity, target, type, val, 17);
+
+}                }
+                case 9:
+                {
+                    var orig = (_ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742)command;
+                    var val = new _ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742.Interop();
+
+                    var pinnedanimName = orig.animName != null ? Encoding.UTF8.GetBytes(orig.animName) : null; fixed (void* pinnedPtranimName = pinnedanimName) { val.animName = new ByteArray { Data = pinnedPtranimName, Length =  pinnedanimName?.Length ?? 0 };
+                    val.value = orig.value;
+
+                    return sender.SendCommand(entity, target, type, val, 20);
+
+}                }
+                case 10:
                 {
                     var orig = (_ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2)command;
                     var val = new _ebd8dda8688470340af97f69a9c4d9de_08ae9e1a8a6d4b5ab3a455fb480466b2.Interop();
@@ -449,7 +485,7 @@ namespace Coherence.Generated
                     return sender.SendCommand(entity, target, type, val, 0);
 
                 }
-                case 8:
+                case 11:
                 {
                     var orig = (_ebd8dda8688470340af97f69a9c4d9de_c81e2014c5d24664992a72dc70220deb)command;
                     var val = new _ebd8dda8688470340af97f69a9c4d9de_c81e2014c5d24664992a72dc70220deb.Interop();

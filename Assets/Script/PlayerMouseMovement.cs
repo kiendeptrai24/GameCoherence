@@ -4,7 +4,7 @@ namespace Kien
     using UnityEngine.AI;
 
     [RequireComponent(typeof(NavMeshAgent))]
-    public class PlayerMouseMovement : MonoBehaviour, IMovement
+    public class MouseMovement : MonoBehaviour, IMovement
     {
         [SerializeField] private Camera mainCamera; 
         [SerializeField] private LayerMask groundLayer; 
