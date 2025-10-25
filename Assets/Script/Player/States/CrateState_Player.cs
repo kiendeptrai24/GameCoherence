@@ -20,6 +20,8 @@ public class CrateState_Player : PlayerState
     public override void Excute()
     {
         base.Excute();
+        if(m_player.m_movement == null || m_player.m_movement.GetVelocity() == null)
+            return;
         if (Input.GetKeyDown(KeyCode.D))
             m_machine.ChangeState<IdleState_Player>();
         if (Mathf.Abs(m_player.m_movement.GetVelocity().magnitude) > 0)

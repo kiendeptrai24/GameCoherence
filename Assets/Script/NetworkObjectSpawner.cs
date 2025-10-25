@@ -4,6 +4,7 @@ using Coherence.Toolkit;
 using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
+using Coherence.Log;
 
 public class NetworkObjectSpawner : Singleton<NetworkObjectSpawner>
 {
@@ -30,7 +31,7 @@ public class NetworkObjectSpawner : Singleton<NetworkObjectSpawner>
             Debug.LogError("No CoherenceBridge found!");
             return;
         }
-
+        Debug.Log("spawn");
         var spawned = Instantiate(prefab, position, rotation);
         var sync = spawned.GetComponent<CoherenceSync>();
         sync.TransferAuthority(_bridge.ClientID);

@@ -14,8 +14,7 @@ namespace Coherence.Generated
         public const int _27f1ac5097d4ee4409fbb87ad14f76c2Index = 0;
         public const int _6ba8b7030c4bf544396f864fc9dd99deIndex = 1;
         public const int _a0e6252c4d09f4fb28257804194356b6Index = 2;
-        public const int _a167402e36850884aa7ce3d374cd6c77Index = 3;
-        public const int _ba50eecfd968a47c38959f27b05771b6Index = 4;
+        public const int _ba50eecfd968a47c38959f27b05771b6Index = 3;
 
         public static readonly EntityArchetype[] Definitions =
 		{
@@ -82,26 +81,6 @@ namespace Coherence.Generated
                     },
                 },
             },
-            new EntityArchetype() // _a167402e36850884aa7ce3d374cd6c77
-            {
-                LODs = new EntityArchetypeLOD[]
-                {
-                    new EntityArchetypeLOD
-                    {
-                        Level = 0,
-                        Distance = 0,
-                        ComponentReplacement = new Dictionary<uint, uint>
-                        {
-                            { 0, Definition.InternalArchetype_a167402e36850884aa7ce3d374cd6c77_WorldPosition_LOD0 },
-                            { 1, Definition.InternalArchetype_a167402e36850884aa7ce3d374cd6c77_WorldOrientation_LOD0 },
-                            { 17, Definition.InternalArchetype_a167402e36850884aa7ce3d374cd6c77_GenericScale_LOD0 },
-                        },
-                        ComponentsExcluded = new uint[] 
-                        {
-                        },
-                    },
-                },
-            },
             new EntityArchetype() // _ba50eecfd968a47c38959f27b05771b6
             {
                 LODs = new EntityArchetypeLOD[]
@@ -128,8 +107,7 @@ namespace Coherence.Generated
             { "_27f1ac5097d4ee4409fbb87ad14f76c2", 0 },
             { "_6ba8b7030c4bf544396f864fc9dd99de", 1 },
             { "_a0e6252c4d09f4fb28257804194356b6", 2 },
-            { "_a167402e36850884aa7ce3d374cd6c77", 3 },
-            { "_ba50eecfd968a47c38959f27b05771b6", 4 },
+            { "_ba50eecfd968a47c38959f27b05771b6", 3 },
         };
     }     
     

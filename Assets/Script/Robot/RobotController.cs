@@ -1,28 +1,26 @@
+using System;
 using Coherence.Connection;
 using Coherence.Toolkit;
 using UnityEngine;
 
-[RequireComponent(typeof(CoherenceSync),typeof(AnimationSync))]
-public class RobotController : MonoBehaviour
+public class RobotController : Charactor
 {
-    public IStateMachine m_robotSM;
-    public IMovement m_movement;
-    public Animator anim;
-    protected void Awake()
+
+    protected override void Awake()
     {
-        anim = GetComponentInChildren<Animator>();
-        m_movement = GetComponent<IMovement>();
-        m_robotSM = new RobotStateMachine(this, GetComponent<CoherenceSync>());
+        base.Awake();
+        stateMachine = new RobotStateMachine(this, GetComponent<CoherenceSync>());
     }
-    protected void Start()
+    protected override void Start()
     {
-        m_robotSM.Init<IdleState_Robot>();
+        base.Start();
+        stateMachine.Init<IdleState_Robot>();
     }
     private void Update()
     {
-        if (m_robotSM != null)
+        if (stateMachine != null)
         {
-            m_robotSM.Update();
+            stateMachine.Update();
         }
     }
 }

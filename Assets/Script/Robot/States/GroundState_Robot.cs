@@ -15,6 +15,8 @@ public class GroundState_Robot : RobotState
     public override void Excute()
     {
         base.Excute();
+        if(m_robot.m_movement == null || m_robot.m_movement.GetVelocity() == null)
+            return;
         if (Input.GetKeyDown(KeyCode.Space))
             m_machine.ChangeState<FlailState_Robot>();
 

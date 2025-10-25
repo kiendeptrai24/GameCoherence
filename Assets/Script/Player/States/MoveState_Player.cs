@@ -19,7 +19,8 @@ public class MoveState_Player : GroundState_Player
     public override void Excute()
     {
         base.Excute();
-
+        if(m_player.m_movement == null || m_player.m_movement.GetVelocity() == null)
+            return;
         if (Mathf.Abs(m_player.m_movement.GetVelocity().magnitude) == 0)
             m_machine.ChangeState<IdleState_Player>();
         

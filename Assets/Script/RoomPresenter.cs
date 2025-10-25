@@ -53,9 +53,13 @@ namespace Coherence.Samples.Kien
 
         private void OnClientSynced(CoherenceClientConnectionManager manager)
         {
-            // Debug.Log(manager.GetAllClients());
-            //view.SetActiveDashBoard(false);
-            Instantiate(gamebject, Vector3.zero, Quaternion.identity);
+            view.SetActiveDashBoard(false);
+            //SceneLoadManager.Instance.LoadRegularScene("Room");
+            var bridge = FindAnyObjectByType<CoherenceBridge>();
+
+            var spawned = Instantiate(gamebject, Vector3.zero, Quaternion.identity);
+            var sync = spawned.GetComponent<CoherenceSync>();
+            sync.TransferAuthority(bridge.ClientID);
         }
 
         private void OnClientJoinWorld()

@@ -59,13 +59,13 @@ namespace Coherence.Generated
         {
             if (dataSize != 4) {
                 throw new Exception($"Given data size is not equal to the struct size. ({dataSize} != 4) " +
-                    "for component with ID 39");
+                    "for component with ID 36");
             }
 
                 
             if (simFramesCount != 0) {
                 throw new Exception($"Given simFrames size is not equal to the expected length. ({simFramesCount} != 0) " +
-                    "for component with ID 39");
+                    "for component with ID 36");
             }
 
             var orig = new _ba50eecfd968a47c38959f27b05771b6_5459872012036489579();

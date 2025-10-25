@@ -22,24 +22,24 @@ public class SendChat : MonoBehaviour
             {
                 Debug.Log("Send message");
                 if (string.IsNullOrWhiteSpace(chatInputField.text)) return;
-                _sync.SendCommand<SendChat>(nameof(OnChatMessage),
-                    MessageTarget.Other, chatInputField.text);
-                _sync.SendCommand<SendChat>(nameof(SendCommand),
-                    MessageTarget.All);
+                _sync.SendCommand<SendChat>(nameof(SendMessege), MessageTarget.Other, chatInputField.text);
                 chatInputField.text = "";
             }
         });
         play.onClick.AddListener(() =>
         {
-            SceneLoadManager.Instance.LoadNetworkScene("Game");
+            SceneLoadManager.Instance.LoadRegularScene("Game");
         });
     }
-    public void OnChatMessage(string message)
+    public void SendMessege(string message)
     {
-        Debug.Log($"Received chat message: {message}");
-    }
-    public void SendCommand()
-    {
-        Debug.Log("SendCommand");
+        // if (client == _sync)
+        // {
+        Debug.Log("you: " + message);
+        // }
+        // else
+        // {
+        //     Debug.Log("other client: " + message);
+        // }
     }
 }

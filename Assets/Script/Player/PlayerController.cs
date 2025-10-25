@@ -2,27 +2,26 @@ using Coherence.Connection;
 using Coherence.Toolkit;
 using UnityEngine;
 
-[RequireComponent(typeof(CoherenceSync),typeof(AnimationSync))]
-public class PlayerController : MonoBehaviour
+
+public class PlayerController : Charactor
 {
-    public IStateMachine m_playerSM;
-    public IMovement m_movement;
-    public Animator anim;
-    protected void Awake()
+
+    protected override void Awake()
     {
-        anim = GetComponentInChildren<Animator>();
-        m_movement = GetComponent<IMovement>();
-        m_playerSM = new PlayerStateMachine(this, GetComponent<CoherenceSync>());
+        base.Awake();
+        stateMachine = new PlayerStateMachine(this, GetComponent<CoherenceSync>());
     }
-    protected void Start()
+    protected override void Start()
     {
-        m_playerSM.Init<IdleState_Player>();
+        base.Start();
+        stateMachine.Init<IdleState_Player>();
     }
     private void Update()
     {
-        if (m_playerSM != null)
+        if (stateMachine != null)
         {
-            m_playerSM.Update();
+            stateMachine.Update();
         }
     }
+
 }
