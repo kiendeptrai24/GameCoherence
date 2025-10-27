@@ -22,6 +22,7 @@ namespace Coherence.Samples.Kien
             roomsDialogUI = FindAnyObjectByType<RoomView>();
             playerNameInputField = roomsDialogUI.playerNameInputField;
             nameChar = playerNameInputField.text;
+            nameTxt.gameObject.SetActive(false);
             playerNameInputField.onValueChanged.AddListener((value) =>
             {
                 ChangeName(value);

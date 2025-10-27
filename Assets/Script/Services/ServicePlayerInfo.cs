@@ -25,9 +25,13 @@ namespace Coherence.Samples.Kien
             public CharacterInfo() {}
         }
         public CharacterInfo charactor;
-
-        private void Awake()
+        private void OnEnable()
         {
+            
+        }
+        protected override void Awake()
+        {
+            base.Awake();
             DontDestroyOnLoad(gameObject);
         }
         public void SetCharactor(CharacterInfo info)

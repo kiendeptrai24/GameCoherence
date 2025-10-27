@@ -12,20 +12,26 @@ namespace Coherence.Samples.Kien
         private string firstSceneToLoad = "MenuUI";
         public bool loadFisrtScene = true;
         private CoherenceBridge _bridge;
-        protected void Awake()
+        private string curretnScene;
+        protected override void Awake()
         {
-            DontDestroyOnLoad(gameObject);
+            base.Awake();
             _bridge = FindAnyObjectByType<CoherenceBridge>();
             if (firstSceneToLoad.Length > 0 && loadFisrtScene)
                 LoadRegularScene(firstSceneToLoad, false);
 
         }
-        private void Start() {
+        private void Start()
+        {
             DontDestroyOnLoad(_bridge.gameObject);
 
             CoherenceSync.BridgeResolve += _ => _bridge;
 
             SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode arg1)
@@ -57,7 +63,8 @@ namespace Coherence.Samples.Kien
         }
         public void LoadRegularScene(string sceneName, bool useLoadScreen = true)
         {
-            Debug.Log("Loading scene: " + sceneName);
+            if (sceneName == curretnScene)
+                return;
             StartCoroutine(ProcessRegularSceneLoading(sceneName, useLoadScreen));
         }
 

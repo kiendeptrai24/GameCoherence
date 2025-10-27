@@ -20,7 +20,7 @@ namespace Coherence.Generated
 
     public class Definition : IDefinition
     {
-        public const string schemaId = "f19276cd18e39166fc21fba401903ee35aad97b4";
+        public const string schemaId = "4e961db73bdabf38f5552db04739507ae57179fa";
         public const uint InternalWorldPosition = 0;
         public const uint InternalWorldOrientation = 1;
         public const uint InternalLocalUserComponent = 2;
@@ -66,10 +66,9 @@ namespace Coherence.Generated
         public const uint InternalSceneIndexChanged = 5;
         public const uint Internal_7c751ec26a8223d4789f4058354a755f_0cbf608705044c5ebf3b857a6e3d19f8 = 6;
         public const uint Internal_7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c = 7;
-        public const uint Internal_a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52 = 8;
-        public const uint Internal_ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e = 9;
-        public const uint Internal_ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742 = 10;
-        public const uint Internal_f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c = 11;
+        public const uint Internal_ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e = 8;
+        public const uint Internal_ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742 = 9;
+        public const uint Internal_f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c = 10;
 
         private static readonly Dictionary<uint, string> componentNamesForTypeIds = new Dictionary<uint, string>()
         {
@@ -134,7 +133,6 @@ namespace Coherence.Generated
             { Definition.InternalSceneIndexChanged , MessageTarget.All },
             { Definition.Internal_7c751ec26a8223d4789f4058354a755f_0cbf608705044c5ebf3b857a6e3d19f8 , MessageTarget.All },
             { Definition.Internal_7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c , MessageTarget.All },
-            { Definition.Internal_a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52 , MessageTarget.All },
             { Definition.Internal_ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e , MessageTarget.All },
             { Definition.Internal_ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742 , MessageTarget.All },
             { Definition.Internal_f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c , MessageTarget.All },
@@ -304,8 +302,6 @@ namespace Coherence.Generated
                     return _7c751ec26a8223d4789f4058354a755f_0cbf608705044c5ebf3b857a6e3d19f8.Deserialize(bitStream, entity, target);
                 case Definition.Internal_7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c:
                     return _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c.Deserialize(bitStream, entity, target);
-                case Definition.Internal_a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52:
-                    return _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52.Deserialize(bitStream, entity, target);
                 case Definition.Internal_ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e:
                     return _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e.Deserialize(bitStream, entity, target);
                 case Definition.Internal_ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742:
@@ -409,9 +405,6 @@ namespace Coherence.Generated
                     break;
                 case Definition.Internal_7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c:
                     _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c.Serialize((_7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c)data, bitStream);
-                    break;
-                case Definition.Internal_a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52:
-                    _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52.Serialize((_a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52)data, bitStream);
                     break;
                 case Definition.Internal_ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e:
                     _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e.Serialize((_ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e)data, bitStream);

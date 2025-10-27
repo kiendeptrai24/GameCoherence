@@ -2699,6 +2699,8 @@ MonoBehaviour:
   characterChose: {fileID: 1972806699}
   player1Reference: {fileID: 7485052835701322150, guid: 600e408f533f6214991240bd90ef4a33, type: 3}
   player2Reference: {fileID: 6914553461301164263, guid: cc56138d5a8772a4a9dc386bf81fe664, type: 3}
+  playerSpawner: {fileID: 0}
+  chose: 0
 --- !u!114 &1869676717
 MonoBehaviour:
   m_ObjectHideFlags: 0

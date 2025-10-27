@@ -120,7 +120,11 @@ namespace Coherence.Samples.Kien
             disconnectButton.onClick.RemoveListener(OnDisconnectClicked);
             popupDismissButton.onClick.RemoveListener(OnPopupDismissClicked);
         }
-        public void SetActiveDashBoard(bool isActive) => dashBoard.SetActive(isActive);
+        public void SetActiveDashBoard(bool isActive)
+        {
+            if (dashBoard == null) return;
+            dashBoard.SetActive(isActive);  
+        }
 
         public void UpdateUIState(UIState state)
         {

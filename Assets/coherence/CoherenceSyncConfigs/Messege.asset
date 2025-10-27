@@ -15,7 +15,7 @@ MonoBehaviour:
   id: a62034e61e33e3841abb0b8f8962eb9d
   selfId: e4c13db199845864b803f48525fa7c77
   editorTarget: {fileID: 4476233733732847638, guid: a62034e61e33e3841abb0b8f8962eb9d, type: 3}
-  includeInSchema: 1
+  includeInSchema: 0
   objectProvider:
     rid: 2856077679434400615
   objectInstantiator:

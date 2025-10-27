@@ -23,18 +23,15 @@ command _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c [id "
   animName String 
   value Bool 
 
-command _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52 [id "8", routing "All"]
-  message String 
-
-command _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e [id "9", routing "All"]
+command _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e [id "8", routing "All"]
   animName String 
   value Bool 
 
-command _ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742 [id "10", routing "All"]
+command _ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742 [id "9", routing "All"]
   animName String 
   value Int 
 
-command _f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c [id "11", routing "All"]
+command _f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c [id "10", routing "All"]
   message String 
 
 archetype _27f1ac5097d4ee4409fbb87ad14f76c2 [id "0"]

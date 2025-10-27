@@ -33,7 +33,7 @@ namespace Coherence.Samples.Kien
             view.OnCreateAndJoinRoomClicked += CreateRoomAndJoin;
             view.OnRefreshRegionsClicked += RefreshCloudRoomsRegions;
             view.OnRegionSelectionChanged += OnRegionSelectionChanged;
-            view.OnDisconnectClicked += lobbyManager.Disconnect;
+            view.OnDisconnectClicked += Disconnect;
             view.OnPopupDismissClicked += view.HideError;
 
             // Subscribe to lobby manager events
@@ -46,6 +46,14 @@ namespace Coherence.Samples.Kien
             lobbyManager.OnJoinWorld += OnClientJoinWorld;
             lobbyManager.OnClientSynced += OnClientSynced;
         }
+
+        private void Disconnect()
+        {
+            lobbyManager.Disconnect();
+            Destroy(gameObject);
+            SceneLoadManager.Instance.LoadRegularScene("StartGame");
+        }
+
         private void OnClientSynced(CoherenceClientConnectionManager manager)
         {
             view.SetActiveDashBoard(false);

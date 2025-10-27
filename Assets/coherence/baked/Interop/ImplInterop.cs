@@ -348,10 +348,9 @@ namespace Coherence.Generated
                   case 5: return SceneIndexChanged.FromInterop(data, dataSize);
                   case 6: return _7c751ec26a8223d4789f4058354a755f_0cbf608705044c5ebf3b857a6e3d19f8.FromInterop(data, dataSize);
                   case 7: return _7c751ec26a8223d4789f4058354a755f_820c5828d87842c4a2e63920ffc0c16c.FromInterop(data, dataSize);
-                  case 8: return _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52.FromInterop(data, dataSize);
-                  case 9: return _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e.FromInterop(data, dataSize);
-                  case 10: return _ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742.FromInterop(data, dataSize);
-                  case 11: return _f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c.FromInterop(data, dataSize);
+                  case 8: return _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e.FromInterop(data, dataSize);
+                  case 9: return _ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742.FromInterop(data, dataSize);
+                  case 10: return _f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c.FromInterop(data, dataSize);
             }
 
             throw new ArgumentException($"Unkown command type {type}", nameof(type));
@@ -453,16 +452,6 @@ namespace Coherence.Generated
 }                }
                 case 8:
                 {
-                    var orig = (_a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52)command;
-                    var val = new _a62034e61e33e3841abb0b8f8962eb9d_91bf60f4f7a0427490846f03cc50ba52.Interop();
-
-                    var pinnedmessage = orig.message != null ? Encoding.UTF8.GetBytes(orig.message) : null; fixed (void* pinnedPtrmessage = pinnedmessage) { val.message = new ByteArray { Data = pinnedPtrmessage, Length =  pinnedmessage?.Length ?? 0 };
-
-                    return sender.SendCommand(entity, target, type, val, 16);
-
-}                }
-                case 9:
-                {
                     var orig = (_ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e)command;
                     var val = new _ca720d4ebce92554188a78a1512b88d3_27c99cf5ed374028996940463609a70e.Interop();
 
@@ -472,7 +461,7 @@ namespace Coherence.Generated
                     return sender.SendCommand(entity, target, type, val, 17);
 
 }                }
-                case 10:
+                case 9:
                 {
                     var orig = (_ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742)command;
                     var val = new _ca720d4ebce92554188a78a1512b88d3_e3ea5d70793143c0a65cb3054b3a0742.Interop();
@@ -483,7 +472,7 @@ namespace Coherence.Generated
                     return sender.SendCommand(entity, target, type, val, 20);
 
 }                }
-                case 11:
+                case 10:
                 {
                     var orig = (_f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c)command;
                     var val = new _f22f1adf1a6f84746a17e3ac644367f7_1a6661a57a064166af8e55398d2f670c.Interop();

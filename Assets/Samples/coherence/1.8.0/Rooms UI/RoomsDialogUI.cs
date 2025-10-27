@@ -77,8 +77,6 @@ namespace Coherence.Samples.RoomsDialog
         private CancellationTokenSource localModeCancellationTokenSource;
         private IReadOnlyList<string> cloudRegionOptions = Array.Empty<string>();
         private IReadOnlyList<RoomData> rooms = Array.Empty<RoomData>();
-        private PlayerSpawner playerSpawner;
-
         private bool IsLoggedIn => cloudRooms is { IsLoggedIn: true };
         private bool IsSelectedRoomServiceReady => cloudRoomsService is not null && IsCloudModeEnabled ? IsLoggedIn : isLocalRoomsServiceOnline;
 
@@ -136,7 +134,6 @@ namespace Coherence.Samples.RoomsDialog
 
         private void OnEnable()
         {
-            playerSpawner = FindAnyObjectByType<PlayerSpawner>();
             var eventSystems = FindObjectsByType<EventSystem>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             if (eventSystems.Length == 0)
             {

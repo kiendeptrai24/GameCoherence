@@ -96,7 +96,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6186455019963745692}
   - component: {fileID: 2391538186669239059}
-  - component: {fileID: 6001591112043197249}
   m_Layer: 0
   m_Name: RobotInToom
   m_TagString: Untagged
@@ -220,8 +219,6 @@ MonoBehaviour:
     - component: {fileID: 1734568319793050127}
       lodStepsActive: 1
     - component: {fileID: 8791576212246160150}
-      lodStepsActive: 1
-    - component: {fileID: 6001591112043197249}
       lodStepsActive: 1
     GeneratesArchetypeDefinition: 0
   interpolationLocation: 1
@@ -407,7 +404,7 @@ MonoBehaviour:
           sampleRate: 0
           floatCompression: 0
           fields: []
-        unityComponent: {fileID: 6001591112043197249}
+        unityComponent: {fileID: 0}
         coherenceSync: {fileID: 2391538186669239059}
         interpolationSettings: {fileID: 0}
     - rid: 2856077665526087942
@@ -432,18 +429,6 @@ MonoBehaviour:
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
---- !u!114 &6001591112043197249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824068539701200199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f47db7c61f3be345ba5cf42fa7d483b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3165348212996453722
 GameObject:
   m_ObjectHideFlags: 0

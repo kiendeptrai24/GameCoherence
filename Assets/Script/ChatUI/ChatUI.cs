@@ -19,7 +19,6 @@ public class ChatUI : MonoBehaviour
     [SerializeField] private Button play;
     private void Awake()
     {
-        _sync = GetComponent<CoherenceSync>();
         sendMessegeBtn.onClick.AddListener(() =>
         {
             OnSendButtonClicked();
@@ -33,6 +32,7 @@ public class ChatUI : MonoBehaviour
     }
     void Start()
     {
+        _sync = GetComponent<CoherenceSync>();
         foreach (Transform child in content)
             Destroy(child.gameObject);
         messegeField.ActivateInputField();

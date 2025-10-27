@@ -5160,7 +5160,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5731416044439649934}
   - component: {fileID: 4295775597669323034}
-  - component: {fileID: -6219499645650440099}
   m_Layer: 3
   m_Name: PlayerInRoom
   m_TagString: Untagged
@@ -5516,8 +5515,6 @@ MonoBehaviour:
       lodStepsActive: 1
     - component: {fileID: 1348613659541874217}
       lodStepsActive: 1
-    - component: {fileID: -6219499645650440099}
-      lodStepsActive: 1
     GeneratesArchetypeDefinition: 0
   interpolationLocation: 1
   RigidbodyUpdateMode: 0
@@ -5684,18 +5681,6 @@ MonoBehaviour:
             Coherence.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         oldName: 
         oldParameterAssemblyTypes: []
---- !u!114 &-6219499645650440099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4099951827205213055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f47db7c61f3be345ba5cf42fa7d483b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4976410161198537500
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,9 @@ using Coherence.Log;
 public class NetworkObjectSpawner : Singleton<NetworkObjectSpawner>
 {
     private CoherenceBridge _bridge;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _bridge = FindAnyObjectByType<CoherenceBridge>();
         DontDestroyOnLoad(gameObject);
     }
