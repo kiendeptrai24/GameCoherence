@@ -22,8 +22,6 @@ public class WaveState_Player : PlayerState, IAnimationTrigger
     public override void Enter()
     {
         base.Enter();
-        // navMeshAgent.isStopped = true;
-        // navMeshAgent.SetDestination(m_player.transform.position);
     }
     public override void Excute()
     {
@@ -32,6 +30,7 @@ public class WaveState_Player : PlayerState, IAnimationTrigger
             return;
         if (Input.GetKeyDown(KeyCode.Space))
             m_machine.ChangeState<IdleState_Player>();
+
         if (Mathf.Abs(m_player.m_movement.GetVelocity().magnitude) > 0)
         {
             m_anim.SetFloat("MovemntVelocity", 1);
@@ -46,6 +45,5 @@ public class WaveState_Player : PlayerState, IAnimationTrigger
     public override void Exit()
     {
         base.Exit();
-        // navMeshAgent.isStopped = false;
     }
 }

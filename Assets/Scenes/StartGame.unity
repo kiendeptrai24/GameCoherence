@@ -2694,13 +2694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c25820b449bce4f84901edebfd9761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character1: {fileID: 760383046}
-  character2: {fileID: 1453495348}
-  characterChose: {fileID: 1972806699}
-  player1Reference: {fileID: 7485052835701322150, guid: 600e408f533f6214991240bd90ef4a33, type: 3}
-  player2Reference: {fileID: 6914553461301164263, guid: cc56138d5a8772a4a9dc386bf81fe664, type: 3}
-  playerSpawner: {fileID: 0}
-  chose: 0
 --- !u!114 &1869676717
 MonoBehaviour:
   m_ObjectHideFlags: 0
