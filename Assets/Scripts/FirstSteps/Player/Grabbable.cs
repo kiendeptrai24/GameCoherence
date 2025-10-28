@@ -144,9 +144,14 @@ namespace Coherence.FirstSteps
         private void ConfirmPickup()
         {
             isBeingCarried = true;
+            _rigidbody.isKinematic = true;
             PickupValidated?.Invoke(true);
         }
 
-        public void Release() => isBeingCarried = false;
+        public void Release()
+        {
+            _rigidbody.isKinematic = false;
+            isBeingCarried = false;
+        }
     }
 }

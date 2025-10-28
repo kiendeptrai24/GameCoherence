@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3793745653331155850}
   - component: {fileID: 6525610836190113121}
   - component: {fileID: 4939570989761225410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crate
   m_TagString: Grabbable
   m_Icon: {fileID: 0}
@@ -28,6 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2212572905728603600}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,7 +36,6 @@ Transform:
   m_Children:
   - {fileID: 7478605892770028023}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &294465140271106047
 MonoBehaviour:
@@ -49,6 +49,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff62c046a053f416a8dc48ad6483a25e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnAuthorityRequest:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNetworkedInstantiation:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBeforeNetworkedInstantiation:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNetworkedDestruction:
+    m_PersistentCalls:
+      m_Calls: []
   OnStateRemote:
     m_PersistentCalls:
       m_Calls: []
@@ -67,14 +79,25 @@ MonoBehaviour:
   OnAuthTransferComplete:
     m_PersistentCalls:
       m_Calls: []
-  OnConnectedEntityChanged:
+  OnNetworkedParentChanged:
     m_PersistentCalls:
       m_Calls: []
   OnInputSimulatorConnected:
     m_PersistentCalls:
       m_Calls: []
-  coherenceSyncConfig: {fileID: 11400000, guid: 3b855c160d84340acb2156ea9e60c7b1,
-    type: 2}
+  OnRigidbody2DPositionUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRigidbody3DPositionUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRigidbody2DRotationUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRigidbody3DRotationUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  coherenceSyncConfig: {fileID: 11400000, guid: 3b855c160d84340acb2156ea9e60c7b1, type: 2}
   archetype:
     lodLevels:
     - distance: 0
@@ -93,30 +116,17 @@ MonoBehaviour:
       lodStepsActive: 1
     - component: {fileID: 6525610836190113121}
       lodStepsActive: 1
-    - component: {fileID: 8241020607719600663}
-      lodStepsActive: 1
     - component: {fileID: 4939570989761225410}
       lodStepsActive: 1
     GeneratesArchetypeDefinition: 1
   interpolationLocation: 4
   RigidbodyUpdateMode: 0
-  OnRigidbody2DPositionUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRigidbody3DPositionUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRigidbody2DRotationUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  OnRigidbody3DRotationUpdate:
-    m_PersistentCalls:
-      m_Calls: []
   bakedScriptType: Coherence.Generated.CoherenceSync_27f1ac5097d4ee4409fbb87ad14f76c2,
     Assembly-CSharp
+  isGlobal: 0
   approveAuthorityTransferRequests: 1
   simulationType: 0
-  authorityTransferType: 1
+  authorityTransferConfig: 1
   orphanedBehavior: 1
   lifetimeType: 1
   uniquenessType: 1
@@ -130,19 +140,9 @@ MonoBehaviour:
   - rid: 2919437089004584961
   - rid: 265633315173171221
   - rid: 265633315173171200
-  onNetworkedInstantiation:
-    m_PersistentCalls:
-      m_Calls: []
-  onBeforeNetworkedInstantiation:
-    m_PersistentCalls:
-      m_Calls: []
-  onNetworkedDestruction:
-    m_PersistentCalls:
-      m_Calls: []
   scenePrefabInstanceUUID: 
   coherenceUUID: crate
   assetVersion: 
-  usingReflection: 0
   coherenceTag: 
   componentActions: []
   floatingOriginMode: 0
@@ -198,8 +198,7 @@ MonoBehaviour:
         oldName: 
         oldParameterAssemblyTypes: []
     - rid: 265633315173171221
-      type: {class: ScaleBinding, ns: Coherence.Toolkit.Bindings.TransformBindings,
-        asm: Coherence.Toolkit}
+      type: {class: ScaleBinding, ns: Coherence.Toolkit.Bindings.TransformBindings, asm: Coherence.Toolkit}
       data:
         descriptor:
           rid: 265633315173171222
@@ -221,8 +220,7 @@ MonoBehaviour:
             floatCompression: 0
         unityComponent: {fileID: 1522740331349769034}
         coherenceSync: {fileID: 294465140271106047}
-        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5,
-          type: 2}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
     - rid: 265633315173171222
       type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
@@ -245,8 +243,7 @@ MonoBehaviour:
         oldName: 
         oldParameterAssemblyTypes: []
     - rid: 2368829912872124484
-      type: {class: PositionBinding, ns: Coherence.Toolkit.Bindings.TransformBindings,
-        asm: Coherence.Toolkit}
+      type: {class: PositionBinding, ns: Coherence.Toolkit.Bindings.TransformBindings, asm: Coherence.Toolkit}
       data:
         descriptor:
           rid: 2368829912872124486
@@ -268,11 +265,9 @@ MonoBehaviour:
             floatCompression: 2
         unityComponent: {fileID: 1522740331349769034}
         coherenceSync: {fileID: 0}
-        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5,
-          type: 2}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
     - rid: 2368829912872124485
-      type: {class: RotationBinding, ns: Coherence.Toolkit.Bindings.TransformBindings,
-        asm: Coherence.Toolkit}
+      type: {class: RotationBinding, ns: Coherence.Toolkit.Bindings.TransformBindings, asm: Coherence.Toolkit}
       data:
         descriptor:
           rid: 2368829912872124487
@@ -294,8 +289,7 @@ MonoBehaviour:
             floatCompression: 0
         unityComponent: {fileID: 1522740331349769034}
         coherenceSync: {fileID: 0}
-        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5,
-          type: 2}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
     - rid: 2368829912872124486
       type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
       data:
@@ -436,9 +430,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2212572905728603600}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1.2224057, y: 1.2224057, z: 1.2224057}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3793745653331155850
@@ -448,10 +450,21 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2212572905728603600}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -495,10 +508,9 @@ GameObject:
   - component: {fileID: 7478605892770028023}
   - component: {fileID: 8211664292191545653}
   - component: {fileID: 6157262914527108723}
-  - component: {fileID: 8241020607719600663}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Graphics
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,13 +522,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8687657005485899766}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1522740331349769034}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8211664292191545653
 MeshFilter:
@@ -543,6 +555,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -568,21 +583,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8241020607719600663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8687657005485899766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c46bab8fedf1749fa89a587831bb70aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  referenceSync: {fileID: 294465140271106047}
-  targetRenderers:
-  - {fileID: 8687657005485899766}
-  stateAuthorityLayer: StateAuthority
-  stateRemoteLayer: StateRemote
-  orphanedLayerName: Orphaned

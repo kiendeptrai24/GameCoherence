@@ -1,16 +1,18 @@
 using System;
 using Coherence;
 using Coherence.Toolkit;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UI;
 
-public class PlantState_Player : PlayerState
+public class PlantState_Player : PlayerState , IAnimtionChanger
 {
     public PlantState_Player(PlayerController player, CoherenceSync _sync, IStateMachine stateMachine, string anim) : base(player, _sync, stateMachine, anim)
     {
     
+    }
+
+    public void Changer(bool active)
+    {
+        m_machine.ChangeState<PlantState_Player>();
     }
 
     public override void Enter()

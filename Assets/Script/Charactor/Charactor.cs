@@ -8,6 +8,7 @@ using UnityEngine;
 public abstract class Charactor : MonoBehaviour
 {
     [SerializeField] private CinemachineCamera _cmCameraPrefab;
+    protected CoherenceSync _sync;
     protected CoherenceBridge _coherenceBridge;
     public IStateMachine stateMachine;
     public IMovement m_movement;
@@ -16,6 +17,7 @@ public abstract class Charactor : MonoBehaviour
     protected virtual void Awake()
     {
         anim = GetComponentInChildren<Animator>();
+        _sync = GetComponent<CoherenceSync>();
         m_movement = GetComponent<IMovement>();
         CoherenceBridgeStore.TryGetBridge(gameObject.scene, out _coherenceBridge);
         CreateCinemachineCamera();
@@ -26,6 +28,8 @@ public abstract class Charactor : MonoBehaviour
     private void CreateCinemachineCamera()
     {
         if (_cmCameraPrefab == null) return;
+        if (_sync.HasStateAuthority == false) return;
+        
         CinemachineCamera cinemachineCamera = Instantiate(_cmCameraPrefab);
         cinemachineCamera.Target.TrackingTarget = cinemachineCamera.Target.LookAtTarget = transform;
     }

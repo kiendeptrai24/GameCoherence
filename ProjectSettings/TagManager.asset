@@ -15,10 +15,10 @@ TagManager:
   - Character
   - Ground
   - obstacle
-  - 
-  - 
-  - 
-  - 
+  - Crate
+  - StateRemote
+  - StateAuthority
+  - Orphaned
   - 
   - 
   - 

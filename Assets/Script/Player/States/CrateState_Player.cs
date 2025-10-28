@@ -6,11 +6,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class CrateState_Player : PlayerState
+public class CrateState_Player : PlayerState  , IAnimtionChanger
 {
     public CrateState_Player(PlayerController player, CoherenceSync _sync, IStateMachine stateMachine, string anim) : base(player, _sync, stateMachine, anim)
     {
     
+    }
+
+    public void Changer(bool active)
+    {
+        m_machine.ChangeState<CrateState_Player>();        
     }
 
     public override void Enter()

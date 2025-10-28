@@ -1,14 +1,20 @@
-using Coherence.Connection;
 using Coherence.Toolkit;
-using UnityEngine;
 
 
 public class PlayerController : Charactor
 {
-
+    public PickUp pickUp;
     protected override void Awake()
     {
         base.Awake();
+        pickUp = GetComponent<PickUp>();
+        pickUp.animAction += (active) =>
+        {
+            if(active)
+                stateMachine.ChangeState<PlantState_Player>(); 
+            else
+                stateMachine.ChangeState<IdleState_Player>();
+        };
         stateMachine = new PlayerStateMachine(this, GetComponent<CoherenceSync>());
     }
     protected override void Start()

@@ -17,10 +17,6 @@ public class GroundState_Player : PlayerState
         base.Excute();
         if (Input.GetKeyDown(KeyCode.Space))
             m_machine.ChangeState<WaveState_Player>();
-        else if (Input.GetKeyDown(KeyCode.D))
-            m_machine.ChangeState<CrateState_Player>();
-        else if (Input.GetKeyDown(KeyCode.F))
-            m_machine.ChangeState<PlantState_Player>();
         // Debug.Log(Mathf.Abs(m_player.m_movement.GetVelocity().magnitude));
     }
     public override void Exit()
