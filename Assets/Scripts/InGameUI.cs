@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class InGameUI : MonoBehaviour
 {
+    public GameObject endGameUI;
     public TextMeshProUGUI titleText;
     public Slider progressBar;
     public TextMeshProUGUI progressText;
@@ -49,5 +50,10 @@ public class InGameUI : MonoBehaviour
     {
         completeText.gameObject.SetActive(true);
         completeText.text = "✅ Mission Complete!";
+        EndGame();
+    }
+    public void EndGame()
+    {
+        endGameUI.SetActive(true);
     }
 }
