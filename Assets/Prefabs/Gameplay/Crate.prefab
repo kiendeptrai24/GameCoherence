@@ -129,7 +129,7 @@ MonoBehaviour:
   authorityTransferConfig: 1
   orphanedBehavior: 1
   lifetimeType: 1
-  uniquenessType: 1
+  uniquenessType: 0
   replacementStrategy: 0
   unsyncedNetworkEntityPriority: 0
   preserveChildren: 0
