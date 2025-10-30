@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Coherence;
 using Coherence.Samples.Kien;
@@ -26,7 +27,22 @@ public class ChatUI : MonoBehaviour
         });
         play.onClick.AddListener(() =>
         {
-            SceneLoadManager.Instance.LoadRegularScene("Game");
+            string vs = ServicePlayerInfo.Instance.gameData.roomData.KV["GameMode"];
+            Debug.Log(vs);
+            if (Enum.TryParse<GameMode>(vs, out var gameMode))
+            {
+                Debug.Log(gameMode);
+
+                switch (gameMode)
+                {
+                    case GameMode.Timer:
+                        SceneLoadManager.Instance.LoadRegularScene("Game 2");
+                        break;
+                    case GameMode.Delivery:
+                        SceneLoadManager.Instance.LoadRegularScene("Game");
+                        break;
+                }
+            }
             Destroy(gameObject);
         });
     }

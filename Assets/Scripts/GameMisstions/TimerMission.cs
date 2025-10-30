@@ -20,6 +20,8 @@ public class TimerMission : MonoBehaviour, IMission, IMissionDisplay
         }
     }
 
+    public float CountdownTimer => Mathf.Abs(Time.time - startTime - duration);
+
     public event Action<IMissionDisplay> OnUpdated;
     public event Action<IMissionDisplay> OnCompleted;
 
@@ -34,7 +36,6 @@ public class TimerMission : MonoBehaviour, IMission, IMissionDisplay
     public void UpdateMission()
     {
         if (!started || isCompleted) return;
-        Debug.Log("Update");
         OnUpdated?.Invoke(this);
 
         if (Progress >= 1f)

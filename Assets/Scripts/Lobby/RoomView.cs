@@ -4,6 +4,7 @@ namespace Coherence.Samples.Kien
     using System.Collections.Generic;
     using System.Linq;
     using Cloud;
+    using TMPro;
     using UnityEngine;
     using UnityEngine.EventSystems;
     using UnityEngine.UI;
@@ -34,6 +35,7 @@ namespace Coherence.Samples.Kien
         public InputField playerNameInputField;
         public Toggle lanOnlineToggle;
         public InputField roomLimitInputField;
+        public TMP_Dropdown roomGameModeDropdown;
         public Dropdown regionDropdown;
         public Button refreshRegionsButton;
         public Button refreshRoomsButton;
@@ -203,6 +205,7 @@ namespace Coherence.Samples.Kien
         public RoomData GetSelectedRoom() => roomsListView.Selection.RoomData;
         public string GetRoomName() => roomNameInputField.text;
         public int GetRoomMaxPlayers() => int.TryParse(roomLimitInputField.text, out var limit) ? limit : 10;
+        public int GetModeGame() => roomGameModeDropdown.value;
         public bool HasPlayerSelected() => FindAnyObjectByType<SelectionCharactor>().character;
         public class ListView
         {

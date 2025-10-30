@@ -12,12 +12,12 @@ namespace Coherence.Samples.Kien
         private IInteractable objInteract;
         private PlayerInteractable player;
         public GameObject character;
-        public ServicePlayerInfo.CharacterInfo GetCharactor()
+        public CharactorInfo GetCharactor()
         {
             player = character.GetComponent<PlayerInteractable>();
             charactorType = player.charactorType;
             namechar = player.GetName();
-            ServicePlayerInfo.CharacterInfo newchar = new ServicePlayerInfo.CharacterInfo();
+            CharactorInfo newchar = new CharactorInfo();
             newchar.type = charactorType;
             newchar.name = namechar;
             return newchar;

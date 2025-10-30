@@ -7,11 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private IMission currentMission;
+    public IMission currentMission;
     public IMissionDisplay CurrentMissionDisplay { get; private set; }
 
     public event Action<IMissionDisplay> OnMissionStarted;
-
+    public event Action OnGameStart;
+    public event Action OnGameEnd;
     private bool gameStarted = false;
 
     private void Awake()
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         if(CurrentMissionDisplay == null)
             Debug.LogError("CurrentMissionDisplay is null");
         OnMissionStarted?.Invoke(CurrentMissionDisplay);
+        OnGameStart?.Invoke();
     }
 
     private void Update()
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Mission Complete!");
             gameStarted = false;
+            OnGameEnd?.Invoke();
         }
     }
 }

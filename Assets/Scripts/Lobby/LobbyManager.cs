@@ -13,6 +13,7 @@ namespace Coherence.Samples.Kien
     public class LobbyManager : MonoBehaviour
     {
         private CoherenceBridge bridge;
+        public RoomData curRoomData;
         private ReplicationServerRoomsService replicationServerRoomsService;
         private CloudRooms cloudRooms;
         private CloudRoomsService cloudRoomsService;
@@ -120,10 +121,12 @@ namespace Coherence.Samples.Kien
         {
             activeRoomsService?.CreateRoom(OnRoomCreated, options, GetOrCreateActiveCancellationToken());
         }
+        
 
         public void JoinRoom(RoomData roomData)
         {
             bridge.JoinRoom(roomData);
+            RoomData.GetRoomEndpointData(roomData);
             OnJoinWorld?.Invoke();
         }
 

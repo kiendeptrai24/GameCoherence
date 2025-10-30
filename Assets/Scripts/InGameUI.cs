@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,14 +37,18 @@ public class InGameUI : MonoBehaviour
 
         mission.OnUpdated += OnMissionUpdated;
         mission.OnCompleted += OnMissionCompleted;
-        Debug.Log("BindMission");
     }
 
     private void OnMissionUpdated(IMissionDisplay mission)
     {
-        Debug.Log("OnMissionUpdated");
+        if (mission == null) Debug.Log("Mission is null");
         progressBar.value = mission.Progress;
-        progressText.text = $"{mission.Progress * 100:F0}%";
+        TimeSpan time = TimeSpan.FromSeconds(mission.CountdownTimer);
+        progressText.text = $"{time.Minutes:D2}:{time.Seconds:D2}";
+
+
+        //$"{mission.Progress * 100:F0}%";
+
     }
 
     private void OnMissionCompleted(IMissionDisplay mission)

@@ -96,10 +96,10 @@ namespace Coherence.Samples.Kien
                 return;
             }
             RoomData selectedRoom = view.GetSelectedRoom();
-
+            lobbyManager.curRoomData = selectedRoom;
             lobbyManager.JoinRoom(selectedRoom);
             view.UpdateUIState(UIState.LoadingSpinner);
-
+            ServicePlayerInfo.Instance.SetGameData(selectedRoom);
         }
 
         private void ShowCreateRoomPanel()
@@ -125,9 +125,10 @@ namespace Coherence.Samples.Kien
 
         private void CreateRoom()
         {
-            var options = RoomCreationOptions.Default;
+            RoomCreationOptions options = new RoomCreationOptions();
             options.KeyValues.Add(RoomData.RoomNameKey, view.GetRoomName());
             options.MaxClients = view.GetRoomMaxPlayers();
+            options.KeyValues.Add("GameMode", ((GameMode)view.GetModeGame()).ToString());
             lobbyManager.CreateRoom(options);
             HideCreateRoomPanel();
         }
@@ -154,7 +155,6 @@ namespace Coherence.Samples.Kien
                 view.UpdateUIState(UIState.NoRoomsExist);
                 return;
             }
-
             var rooms = response.Result;
             view.UpdateRoomList(rooms, lastCreatedRoomUid);
             lastCreatedRoomUid = 0;
@@ -171,6 +171,8 @@ namespace Coherence.Samples.Kien
             }
 
             var createdRoom = response.Result;
+            
+            lobbyManager.curRoomData = createdRoom;
             if (joinNextCreatedRoom)
             {
                 joinNextCreatedRoom = false;
@@ -181,6 +183,7 @@ namespace Coherence.Samples.Kien
                 lastCreatedRoomUid = createdRoom.UniqueId;
                 lobbyManager.RefreshRooms();
             }
+            ServicePlayerInfo.Instance.SetGameData(createdRoom);
         }
 
         private void OnRegionsChanged(RequestResponse<IReadOnlyList<string>> response)
