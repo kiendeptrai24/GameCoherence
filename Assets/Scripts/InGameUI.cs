@@ -1,17 +1,19 @@
 using System;
+using MagicPigGames;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InGameUI : MonoBehaviour
 {
     public GameObject endGameUI;
     public TextMeshProUGUI titleText;
-    public Slider progressBar;
-    public TextMeshProUGUI progressText;
-    public TextMeshProUGUI completeText;
+    public TextMeshProUGUI progressSecondText;
+    public TextMeshProUGUI questText;
+    public TextMeshProUGUI progresspercentText;
 
     private IMissionDisplay currentMission;
+    [SerializeField] private ProgressBarInspectorTest progressBarInspectorTest;
+
 
     private void Start()
     {
@@ -31,9 +33,9 @@ public class InGameUI : MonoBehaviour
 
         if (mission == null) return;
 
-        titleText.text = mission.Title;
-        progressBar.value = 0;
-        completeText.gameObject.SetActive(false);
+        titleText.text = "Tilte: ".ToUpper() + mission.Title;
+        questText.gameObject.SetActive(true);
+        questText.text = "Quest: ".ToUpper() + mission.Description;
 
         mission.OnUpdated += OnMissionUpdated;
         mission.OnCompleted += OnMissionCompleted;
@@ -42,19 +44,16 @@ public class InGameUI : MonoBehaviour
     private void OnMissionUpdated(IMissionDisplay mission)
     {
         if (mission == null) Debug.Log("Mission is null");
-        progressBar.value = mission.Progress;
+        progressBarInspectorTest.progress = mission.Progress;
+        progresspercentText.text = $"{mission.Progress * 100:F0}%";
         TimeSpan time = TimeSpan.FromSeconds(mission.CountdownTimer);
-        progressText.text = $"{time.Minutes:D2}:{time.Seconds:D2}";
-
-
+        progressSecondText.text = $"{time.Minutes:D2}:{time.Seconds:D2}";
         //$"{mission.Progress * 100:F0}%";
 
     }
 
     private void OnMissionCompleted(IMissionDisplay mission)
     {
-        completeText.gameObject.SetActive(true);
-        completeText.text = "✅ Mission Complete!";
         EndGame();
     }
     public void EndGame()

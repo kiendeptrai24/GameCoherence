@@ -12,7 +12,6 @@ public class IdleState_Player : GroundState_Player
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Idle");
     }
     public override void Excute()
     {

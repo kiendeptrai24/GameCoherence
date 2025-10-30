@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator Start() {
         yield return null;
-        StartGame(new TimerMission());
+        StartGame(GetComponentInChildren<TimerMission>());
     }
 
     public void StartGame(IMission mission)

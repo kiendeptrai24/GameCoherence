@@ -13,7 +13,6 @@ public class MoveState_Player : GroundState_Player
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Move");
 
     }
     public override void Excute()

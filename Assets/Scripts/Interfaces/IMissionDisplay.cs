@@ -4,6 +4,7 @@ using UnityEditor;
 public interface IMissionDisplay
 {
     string Title { get; }
+    string Description { get; }
     float Progress { get; }
     bool IsCompleted { get; }
     float CountdownTimer { get; }
