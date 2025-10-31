@@ -31,7 +31,7 @@ namespace Coherence.Samples.Kien
                 _activeUsers.Add(user.type, user.prefab);
             }
             _charInfo = ServicePlayerInfo.Instance;
-            if (_charInfo.charactor.type == PlayerInteractable.CharactorType.None)
+             if (_charInfo.charactor.type == PlayerInteractable.CharactorType.None)
                 return;
             charactorType = _charInfo.charactor.type;
         }

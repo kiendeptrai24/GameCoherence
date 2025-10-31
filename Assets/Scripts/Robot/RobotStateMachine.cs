@@ -37,8 +37,6 @@ public class RobotStateMachine : IStateMachine
     public void SetState(IState curState) => _curState = curState;
     public IState GetState<T>() where T : IState => _statesDirtionary[typeof(T)];
 
-
-
     public void Update()
     {
         if (_curState != null)

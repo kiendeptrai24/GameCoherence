@@ -21,6 +21,7 @@ public class RobotStateFactory : IStateFactory
             {typeof(IdleState_Robot), new IdleState_Robot(_robot, _sync, _machine, "Idle")},
             {typeof(MoveState_Robot), new MoveState_Robot(_robot, _sync, _machine, "Move")},
             {typeof(FlailState_Robot), new FlailState_Robot(_robot, _sync, _machine, "Flail")},
+            {typeof(CrateState_Robot), new CrateState_Robot(_robot, _sync, _machine, "Crate")},
 
         };
         return Playerdictionary;
