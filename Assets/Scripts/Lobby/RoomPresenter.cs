@@ -1,13 +1,10 @@
 namespace Coherence.Samples.Kien
 {
-    using System;
     using System.Collections.Generic;
-    using System.Threading;
     using Cloud;
     using Coherence.Toolkit;
     using Connection;
     using UnityEngine;
-    using UnityEngine.UI;
 
     public class RoomPresenter : MonoBehaviour
     {
@@ -18,7 +15,7 @@ namespace Coherence.Samples.Kien
         private bool wasCloudModeEnabled = true;
         private bool joinNextCreatedRoom;
         private ulong lastCreatedRoomUid;
-        private void Awake()
+        protected void Awake()
         {
             // Add component
             lobbyManager = FindAnyObjectByType<LobbyManager>();

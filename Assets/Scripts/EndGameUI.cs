@@ -11,12 +11,13 @@ public class EndGameUI : MonoBehaviour
     private void Start()
     {
         var bridge = FindAnyObjectByType<CoherenceBridge>();
-
+        var roomPresenter = FindAnyObjectByType<RoomPresenter>();
         exit.onClick.AddListener(() =>
         {
             if (bridge)
             {
                 bridge.Disconnect();
+                Destroy(roomPresenter.gameObject);
                 SceneManager.LoadScene("StartGame");
             }
         });

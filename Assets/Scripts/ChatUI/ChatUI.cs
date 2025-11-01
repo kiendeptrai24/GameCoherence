@@ -27,9 +27,8 @@ public class ChatUI : MonoBehaviour
         });
         play.onClick.AddListener(() =>
         {
-            string vs = ServicePlayerInfo.Instance.gameData.roomData.KV["GameMode"];
-            Debug.Log(vs);
-            if (Enum.TryParse<GameMode>(vs, out var gameMode))
+            string mode = ServicePlayerInfo.Instance.gameData.roomData.KV["GameMode"];
+            if (Enum.TryParse<GameMode>(mode, out var gameMode))
             {
                 Debug.Log(gameMode);
 
@@ -78,22 +77,20 @@ public class ChatUI : MonoBehaviour
     public void AddMessage(string text, bool isMine)
     {
         if (isMine)
-            Debug.Log("you: " + text);
+            text = text + " :You";
         else
-            Debug.Log("other client: " + text);
+            text = "Other client: " + text;
+
         var prefab = isMine ? rightMessagePrefab : leftMessagePrefab;
         GameObject msg = Instantiate(prefab, content);
 
-        // Gán nội dung
         TMP_Text msgText = msg.GetComponent<TMP_Text>();
         msgText.text = text;
 
-        // Cập nhật layout trước khi cuộn
-        Canvas.ForceUpdateCanvases();
-        scrollRect.verticalNormalizedPosition = 0f;
+        // Cập nhật layout
         Canvas.ForceUpdateCanvases();
 
-        // Cuộn mượt xuống cuối
+        // Gọi coroutine cuộn mượt (sẽ đợi 1 frame để layout hoàn tất)
         StartCoroutine(SmoothScrollToBottom());
     }
     public void ReceiveMessege(string message)
@@ -102,8 +99,12 @@ public class ChatUI : MonoBehaviour
     }
     private IEnumerator SmoothScrollToBottom()
     {
-        yield return null; // Đợi 1 frame
-        float duration = 0.2f;
+        // Đợi 1 frame để Unity cập nhật lại layout sau khi thêm phần tử
+        yield return null;
+
+        Canvas.ForceUpdateCanvases();
+
+        float duration = 0.15f;
         float time = 0f;
         float startPos = scrollRect.verticalNormalizedPosition;
 

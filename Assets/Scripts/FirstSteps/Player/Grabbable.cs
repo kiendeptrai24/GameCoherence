@@ -31,7 +31,15 @@ namespace Coherence.FirstSteps
             _rigidbody = GetComponent<Rigidbody>();
             _sync = GetComponent<CoherenceSync>();
         }
-        
+        private void Start() {
+            GameManager.Instance.OnGameEnd += Clear;
+        }
+
+        private void Clear()
+        {
+            Destroy(gameObject);
+        }
+
         private void OnEnable()
         {
             _sync.OnAuthorityRequest.AddListener(OnAuthorityRequested);
